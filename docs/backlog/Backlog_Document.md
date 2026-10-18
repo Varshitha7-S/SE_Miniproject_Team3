@@ -6,10 +6,10 @@ Source: SRS v1.1 (FR-001..017, NFR-001..007, SR-001..005), SAD v1.1, Test Plan. 
 
 | Member | Role | Stories | Points |
 |---|---|---|---|
-| Aditya | Developer | 23 | 80 |
-| Varshita | QA Lead | 6 | 21 |
-| Shailaja | Tester | 3 | 18 |
-| Krishna | Product Owner | 5 | 13 |
+| Aditya | Developer | 11 | 41 |
+| Varshita | QA Lead | 9 | 34 |
+| Shailaja | Tester | 8 | 34 |
+| Krishna | Product Owner | 9 | 27 |
 
 ## Sprint load
 
@@ -25,18 +25,18 @@ Source: SRS v1.1 (FR-001..017, NFR-001..007, SR-001..005), SAD v1.1, Test Plan. 
 | HMS-001 | Project setup: repo structure, README, .env.example, DB connection | HMS-NFR-005, HMS-SR-003 | High | 3 | 1 | Aditya |
 | HMS-002 | Create student record | HMS-FR-001 | High | 3 | 1 | Aditya |
 | HMS-003 | View student details | HMS-FR-002 | High | 2 | 1 | Aditya |
-| HMS-004 | Update student details | HMS-FR-003 | High | 3 | 1 | Aditya |
-| HMS-005 | Search students by ID or name | HMS-FR-004 | Medium | 3 | 2 | Aditya |
-| HMS-006 | Add room with unique number and positive capacity | HMS-FR-005 | High | 3 | 1 | Aditya |
-| HMS-007 | Show room capacity, occupancy and remaining capacity | HMS-FR-006 | High | 5 | 1 | Aditya |
-| HMS-008 | Allocate student to a room | HMS-FR-007 | High | 5 | 1 | Aditya |
-| HMS-009 | Reject allocation to a full room | HMS-FR-008 | High | 2 | 1 | Aditya |
-| HMS-010 | Prevent duplicate active allocation per student | HMS-FR-009 | High | 3 | 1 | Aditya |
-| HMS-011 | Change a student's room | HMS-FR-010 | Medium | 5 | 2 | Aditya |
-| HMS-012 | Vacate a room | HMS-FR-011 | High | 3 | 2 | Aditya |
-| HMS-013 | Filter rooms and allocations | HMS-FR-013 | Medium | 3 | 2 | Aditya |
-| HMS-014 | Dashboard summary | HMS-FR-015 | Medium | 3 | 2 | Aditya |
-| HMS-015 | Form validation and user-friendly error messages | HMS-FR-016 | High | 3 | 1 | Aditya |
+| HMS-004 | Update student details | HMS-FR-003 | High | 3 | 1 | Krishna |
+| HMS-005 | Search students by ID or name | HMS-FR-004 | Medium | 3 | 2 | Varshitha |
+| HMS-006 | Add room with unique number and positive capacity | HMS-FR-005 | High | 3 | 1 | Shailaja |
+| HMS-007 | Show room capacity, occupancy and remaining capacity | HMS-FR-006 | High | 5 | 1 | Shailaja |
+| HMS-008 | Allocate student to a room | HMS-FR-007 | High | 5 | 1 | Varshitha |
+| HMS-009 | Reject allocation to a full room | HMS-FR-008 | High | 2 | 1 | Shailaja |
+| HMS-010 | Prevent duplicate active allocation per student | HMS-FR-009 | High | 3 | 1 | Krishna |
+| HMS-011 | Change a student's room | HMS-FR-010 | Medium | 5 | 2 | Shailaja |
+| HMS-012 | Vacate a room | HMS-FR-011 | High | 3 | 2 | Varshitha |
+| HMS-013 | Filter rooms and allocations | HMS-FR-013 | Medium | 3 | 2 | Krishna |
+| HMS-014 | Dashboard summary | HMS-FR-015 | Medium | 3 | 2 | Krishna |
+| HMS-015 | Form validation and user-friendly error messages | HMS-FR-016 | High | 3 | 1 | Shailaja |
 | HMS-016 | Server-side validation of all API input | HMS-NFR-007, HMS-SR-002 | High | 3 | 1 | Aditya |
 | HMS-017 | Safe, consistent error handling | HMS-SR-004 | Medium | 2 | 2 | Aditya |
 | HMS-018 | Allocation data integrity (no overbooking, no contradictory records) | HMS-NFR-003 | High | 5 | 2 | Aditya |
