@@ -4,34 +4,49 @@
 
 ## Overview
 
-The Hostel Management System is designed to help organize hostel operations by maintaining student details and managing hostel room allocation. The system aims to provide a structured way to handle student records and room assignments, making hostel-related information easier to maintain and access.
+The Hostel Management System aims to simplify hostel administration by maintaining student records and managing hostel room allocation. It provides a structured way to create, update, search and manage student information and room assignments.
 
 ## Objectives
 
 - Maintain student information in a centralized system.
-- Manage hostel room allocation and room-assignment details.
-- Make hostel records easier to organize, update, and retrieve.
-- Provide a foundation for extending hostel management features as the project develops.
+- Manage room details, capacity and occupancy.
+- Allocate students to rooms and support room changes and vacation.
+- Prevent duplicate allocations and allocation beyond room capacity.
+- Improve the organization and retrieval of hostel records.
 
 ## Technology Stack
 
 - **Frontend:** React
-- **Backend:** Node.js with Express
+- **Backend:** Node.js and Express.js
 - **Database:** MongoDB
 
 ## Team Members
 
-| Sl. No. | Name | USN |
-|---:|---|---|
-| 1 | Shailaja | PES1UG24AM449 |
-| 2 | Varshitha S | PES1UG24AM454 |
-| 3 | Krishna Tejas Voruganti | PES1UG24AM436 |
-| 4 | Aditya Singhal | PES1UG24AM420 |
+| Name | USN | Role |
+|---|---|---|
+| Shailaja | PES1UG24AM449 | Tester |
+| Varshitha S | PES1UG24AM454 | QA Lead |
+| Krishna Tejas Voruganti | PES1UG24AM436 | Product Owner |
+| Aditya Singhal | PES1UG24AM420 | Developer / Dev Lead |
 
-## Core Scope
+## Project Scope
 
-The initial scope focuses on student-detail management and hostel room allocation. Further requirements and features will be defined and refined during the software development process.
+The core scope includes student record management, room management, room allocation, room changes, room vacation, searching and filtering, and dashboard summaries. Optional features will be included after the team confirms the scope.
 
-## Project Type
+## Project Documents
 
-Software Engineering Mini Project
+- [Software Requirements Specification (SRS)](docs/SRS_HMS.docx)
+- [Software Architecture Document (SAD)](docs/SAD_HMS.docx)
+- [Test Plan](docs/Test_Plan_HMS.docx)
+- [Backlog Documentation](docs/backlog/Backlog_Document.md)
+- [Backlog CSV](docs/backlog/backlog.csv)
+
+## Project Management
+
+- [GitHub Issues](../../issues)
+- [Pull Requests](../../pulls)
+- [Hostel Management System Project Board](https://github.com/users/Varshitha7-S/projects/1)
+
+## Project Status
+
+The initial backlog and planning documents have been prepared. Implementation and testing will proceed through the planned sprints.
