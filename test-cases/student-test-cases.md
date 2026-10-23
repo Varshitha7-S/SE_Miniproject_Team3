@@ -1,41 +1,91 @@
+
 # Student Management Test Cases
 
-**Project:** Hostel Management System  
-**Tester:** Shailaja  
-**Backlog Item:** HMS-030  
-**Sprint:** Sprint 1  
-**Status:** Planned — not yet executed
+Project: Hostel Management System
 
-## TC-STU-001: Add Student with Valid Details
-**Steps:** Enter valid student details and click Save.  
-**Expected Result:** Student is saved and appears in the student list.
+Tester: Shailaja
 
-## TC-STU-002: Required Fields Validation
-**Steps:** Leave a required field empty and click Save.  
-**Expected Result:** A validation message appears and the invalid record is not saved.
+Backlog Item: HMS-030
 
-## TC-STU-003: Duplicate Student ID
-**Precondition:** A student with the test ID already exists.  
-**Steps:** Attempt to create another student using the same ID.  
-**Expected Result:** The duplicate is rejected and the existing record remains unchanged.
+Sprint: Sprint 1
 
-## TC-STU-004: View Student Details
-**Precondition:** A test student exists.  
-**Steps:** Open the student's details.  
-**Expected Result:** The correct student information is displayed.
+Status: Planned — not yet executed
 
-## TC-STU-005: Update Student Details
-**Precondition:** A test student exists.  
-**Steps:** Change a field and save.  
-**Expected Result:** The updated information is saved and displayed correctly.
+## TC-STU-001: Create Student with Valid Required Fields
 
-## TC-STU-006: Invalid Student Input
-**Steps:** Submit invalid or incomplete student data.  
-**Expected Result:** Invalid data is rejected with a clear validation message.
+Requirement: HMS-FR-001
 
-## TC-STU-007: Student Does Not Exist
-**Precondition:** Student lookup is available.  
-**Steps:** Request a student ID that does not exist.  
-**Expected Result:** A clear not-found response is displayed.
+Steps:
+1. Enter a unique student ID and valid required details.
+2. Save the student record.
 
-**Execution note:** These tests are planned and have not yet been executed. Record actual results only after testing a working application.
+Expected Result: The student is created and appears in the student list.
+
+## TC-STU-002: Reject Duplicate Student ID
+
+Requirement: HMS-FR-001
+
+Precondition: A student with the test ID already exists.
+
+Steps:
+1. Attempt to create another student using the existing student ID.
+
+Expected Result: The duplicate is rejected and the original record remains unchanged.
+
+## TC-STU-003: Reject Missing Required Field
+
+Requirement: HMS-FR-016
+
+Steps:
+1. Submit the student form with a required field empty.
+
+Expected Result: A validation message appears and no record is saved.
+
+## TC-STU-004: Search for Existing Student
+
+Requirement: HMS-FR-004
+
+Precondition: A test student exists.
+
+Steps:
+1. Search using the exact student ID or name.
+
+Expected Result: The matching student is displayed.
+
+## TC-STU-005: Update Existing Student Details
+
+Requirement: HMS-FR-003
+
+Precondition: A test student exists.
+
+Steps:
+1. Open the student record.
+2. Change a permitted field.
+3. Save the changes.
+
+Expected Result: The updated value is displayed and remains after refresh.
+
+## TC-STU-006: Search with No Matching Student
+
+Requirement: HMS-FR-004
+
+Steps:
+1. Search for a student ID or name that does not exist.
+
+Expected Result: No records are shown and a clear no-match message appears.
+
+## TC-STU-007: View Stored Student Details
+
+Requirement: HMS-FR-002
+
+Precondition: A test student exists.
+
+Steps:
+1. Select the existing student from the list.
+
+Expected Result: The displayed details match the saved record.
+
+## Execution Note
+
+These tests are planned and have not yet been executed. Record actual results only after testing a working application.
+

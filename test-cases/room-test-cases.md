@@ -1,3 +1,4 @@
+
 # Room Management Test Cases
 
 **Project:** Hostel Management System  
@@ -7,6 +8,7 @@
 **Status:** Planned — not yet executed
 
 ## TC-ROOM-001: Add Room with Valid Details
+**Requirement:** HMS-FR-005  
 **Precondition:** The room creation feature is available.  
 **Steps:**
 1. Open the room management page.
@@ -16,6 +18,7 @@
 **Expected Result:** The room is saved and appears in the room list.
 
 ## TC-ROOM-002: Duplicate Room Number
+**Requirement:** HMS-FR-005  
 **Precondition:** A room with the test room number already exists.  
 **Steps:**
 1. Attempt to create another room with the same room number.
@@ -23,42 +26,42 @@
 
 **Expected Result:** The duplicate room is rejected and the existing room remains unchanged.
 
-## TC-ROOM-003: Zero Capacity
+## TC-ROOM-003: Invalid Capacity (Zero or Negative)
+**Requirement:** HMS-FR-005  
 **Steps:**
 1. Open room creation.
-2. Enter capacity as `0`.
-3. Click Save.
+2. Enter capacity as `0` and click Save.
+3. Repeat with capacity as `-1`.
 
-**Expected Result:** The invalid capacity is rejected with a clear validation message.
+**Expected Result:** Both invalid capacities are rejected with a clear validation message, and no invalid room is saved.
 
-## TC-ROOM-004: Negative Capacity
+## TC-ROOM-004: View Empty Room Occupancy
+**Requirement:** HMS-FR-006  
+**Precondition:** A room exists with no active student allocations.  
 **Steps:**
-1. Enter capacity as `-1`.
-2. Click Save.
+1. Open the room details.
+2. Check the displayed occupancy and available capacity.
 
-**Expected Result:** The invalid capacity is rejected and the room is not saved.
+**Expected Result:** Occupancy is shown as `0`, and available capacity matches the room's total capacity.
 
 ## TC-ROOM-005: Required Fields Validation
+**Requirements:** HMS-FR-016, HMS-NFR-007  
 **Steps:**
 1. Leave a required room field empty.
 2. Click Save.
 
 **Expected Result:** A validation message appears and the invalid room is not saved.
 
-## TC-ROOM-006: View Empty Room Occupancy
-**Precondition:** A room exists with no active student allocations.  
-**Steps:**
-1. Open the room details.
-
-**Expected Result:** Occupancy is shown as `0`, and available capacity matches the room's total capacity.
-
 ## TC-ROOM-007: Occupancy After Allocation
-**Precondition:** A room exists and the allocation feature is available.  
+**Requirement:** HMS-FR-006  
+**Precondition:** A room exists with available capacity and the allocation feature is available.  
 **Steps:**
-1. Allocate one student to the room.
-2. View the room's occupancy and available capacity.
+1. Record the room's current occupancy and available capacity.
+2. Allocate one student to the room.
+3. View the room's occupancy and available capacity again.
 
 **Expected Result:** Occupancy increases by one and available capacity decreases by one.
 
 ## Execution Note
 These test cases are planned and have not yet been executed. Record actual results only after testing a working application.
+
