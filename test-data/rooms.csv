@@ -1,0 +1,6 @@
+﻿roomId,roomNumber,block,floor,capacity,occupancy,status
+R101,101,A,1,2,2,Full
+R102,102,A,1,3,2,Available
+R103,103,B,2,2,0,Available
+R104,104,B,2,4,1,Available
+R105,105,B,2,1,1,Full
