@@ -19,13 +19,12 @@
 |---|---|
 | Total automated test suites | 1 |
 | Automated test suites passed | 1 |
-| Total automated tests | 38 |
-| Automated tests passed | 38 |
+| Total automated tests | 40 |
+| Automated tests passed | 40 |
 | Automated tests failed | 0 |
 | Snapshots | 0 |
-| Reported automated test runtime | Approximately 14.3 seconds |
+| Reported automated test runtime | Approximately 10.883 seconds |
 | Automated test result | PASS |
-
 ## 3. Areas Covered
 
 The existing automated test suite reported passing tests for:
