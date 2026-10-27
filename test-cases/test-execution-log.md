@@ -51,3 +51,9 @@
 - **Automated API tests:** 40 passed, 0 failed
 - **Test-run note:** Jest displayed a force-exit warning after the passing test run; this was a warning, not a test failure.
 - **Evidence location:** `docs/evidence/`
+
+## 4. Defect Summary
+
+- No defects were observed during the manual test execution recorded in this log.
+- Validation scenarios behaved as expected, including duplicate student ID rejection, invalid room capacity rejection, duplicate room rejection, and allocation validation.
+- No defect reports were raised based on these test results.
