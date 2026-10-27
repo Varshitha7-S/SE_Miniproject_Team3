@@ -1,0 +1,11 @@
+﻿studentId,fullName,email,phone,course,year,status
+STU001,Aarav Mehta,aarav.mehta@example.com,0000000001,AIML,2,Active
+STU002,Diya Sharma,diya.sharma@example.com,0000000002,CSE,2,Active
+STU003,Rohan Kapoor,rohan.kapoor@example.com,0000000003,AIML,3,Active
+STU004,Anika Rao,anika.rao@example.com,0000000004,ECE,2,Active
+STU005,Kabir Nair,kabir.nair@example.com,0000000005,CSE,3,Active
+STU006,Meera Iyer,meera.iyer@example.com,0000000006,AIML,2,Active
+STU007,Arjun Das,arjun.das@example.com,0000000007,EEE,3,Active
+STU008,Sana Khan,sana.khan@example.com,0000000008,CSE,2,Active
+STU009,Vivaan Joshi,vivaan.joshi@example.com,0000000009,AIML,3,Active
+STU010,Tara Menon,tara.menon@example.com,0000000010,ECE,2,Active
