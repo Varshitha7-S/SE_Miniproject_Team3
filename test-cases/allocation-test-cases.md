@@ -3,7 +3,7 @@
 **Backlog Item:** HMS-025  
 **Sprint:** Sprint 1  
 **Owner:** Varshitha S  
-**Status:** Planned — not executed
+**Status:** Execution in progress — selected cases executed; see test-execution-log.md
 
 ## TC-ALLOC-001: Allocate Student to an Available Room
 - **Preconditions:** A valid student exists and the room has available capacity.
