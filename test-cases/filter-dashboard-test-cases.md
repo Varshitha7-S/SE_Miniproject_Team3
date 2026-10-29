@@ -5,7 +5,7 @@
 **Tester:** Shailaja  
 **Backlog Item:** HMS-031  
 **Sprint:** Sprint 2  
-**Status:** Planned — not yet executed
+**Status:** Execution in progress — selected cases executed; see test-execution-log.md
 
 ## TC-FILT-001: Filter Rooms by Availability
 **Requirement:** HMS-FR-013  

@@ -9,7 +9,7 @@ Backlog Item: HMS-030
 
 Sprint: Sprint 1
 
-Status: Planned — not yet executed
+Status: Execution in progress — selected cases executed; see test-execution-log.md
 
 ## TC-STU-001: Create Student with Valid Required Fields
 
