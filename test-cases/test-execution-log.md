@@ -15,7 +15,7 @@
 | TC-STU-002 | Team development build | Duplicate student ID was rejected. | Pass | Shailaja P.C. | 26 Oct 2026 | [View Screenshot](../docs/evidence/07-student-duplicate-id-validation.png) |
 | TC-STU-003 | Team development build | Missing student ID displayed the required-field validation message; record was not saved. | Pass | Shailaja P.C. | 26 Oct 2026 | [View Screenshot](../docs/evidence/06-student-validation-error.png) |
 | TC-STU-004 | Team development build | Existing student was found by searching with student ID. | Pass | Shailaja P.C. | 26 Oct 2026 | [View Screenshot](../docs/evidence/09-student-search-existing-by-id.png) |
-| TC-STU-005 | Team development build | Search by student name was tested successfully. | Pass | Shailaja P.C. | 26 Oct 2026 | [View Screenshot](../docs/evidence/08-student-details-and-search-section.png) |
+| TC-STU-005 | Team development build | Existing student details were updated successfully. | Pass | Shailaja P.C. | 26 Oct 2026 | [View Screenshot](../docs/evidence/08-student-details-and-search-section.png) |
 | TC-STU-006 | Team development build | No-match student search displayed no matching result. | Pass | Shailaja P.C. | 26 Oct 2026 | [View Screenshot](../docs/evidence/10-student-search-no-match.png) |
 | TC-STU-007 | Team development build | Existing student details were updated successfully. | Pass | Shailaja P.C. | 26 Oct 2026 | [View Screenshot](../docs/evidence/11-student-details-after-edit.png) |
 | TC-ROOM-001 | Team development build | Room C301 was added with capacity 4. | Pass | Shailaja P.C. | 26 Oct 2026 | [View Screenshot](../docs/evidence/14-room-created-list.png) |
