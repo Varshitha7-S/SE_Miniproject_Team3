@@ -1,10 +1,10 @@
-﻿# Quality Test Cases — Hostel Management System
+# Quality Test Cases — Hostel Management System
 
 **Project:** Hostel Management System
 **Version:** 1.1
 **Task:** HMS-026 — Design security, usability, performance, and compatibility test cases
 **Prepared by:** Varshitha S (QA Lead)
-**Status:** Draft — Planned, not yet executed
+**Status:** Draft — selected checks executed; remaining quality checks pending; see test-execution-log.md
 
 ## 1. Purpose and Scope
 
@@ -133,22 +133,41 @@ Optional-feature tests apply only when the relevant feature is implemented.
 - **Expected result:** The implemented core workflows and controls function in the agreed target browser at desktop resolution.
 - **Evidence:** Browser/version details and screenshots or notes for any compatibility defects.
 
-## 6. Execution Record
+## 6. Maintainability Test Case
+
+### TC-REV-001 — Review Modular Code Organization
+
+- **Requirement:** HMS-NFR-005
+- **Priority:** Low
+- **Preconditions:** Access to the current frontend/backend source code and setup documentation.
+- **Steps:**
+  1. Review the frontend pages and components and identify their responsibilities.
+  2. Review backend routes, models, validation, configuration, and allocation logic.
+  3. Confirm that the frontend communicates with the backend through the API rather than connecting directly to MongoDB.
+  4. Review the README and API documentation for setup and endpoint guidance.
+  5. Record unclear responsibilities or missing documentation as observations.
+  6. If a reproducible defect is found, create a GitHub issue with severity, owner, reproduction steps, and evidence.
+- **Expected result:** Frontend, backend, and data-access responsibilities are separated into understandable modules, and setup instructions are documented.
+- **Evidence:** Reviewed file paths, observations, and any linked defect issue.
+- **Status:** Planned — not yet executed.
+
+## 7. Execution Record
 
 Complete this table only after the tests have actually been run.
 
-| Test Case ID | Build/Version | Actual Result | Status (Pass/Fail/Blocked) | Tester | Date | Evidence / Issue |
+| Test Case ID | Build/Version | Actual Result | Status (Pass/Fail/Blocked/Partial) | Tester | Date | Evidence / Issue |
 |---|---|---|---|---|---|---|
-| TC-SEC-001 | | | | | | |
-| TC-SEC-002 | | | | | | |
+| TC-SEC-001 | 2c239a3 | Automated API test denied unauthenticated requests; login also worked. | Pass | Varshitha S | 2026-10-28 | npm test output |
+| TC-SEC-002 | 2c239a3 | Automated API validation tests rejected invalid payloads without saving invalid records. | Pass | Varshitha S | 2026-10-28 | npm test output |
 | TC-SEC-003 | | | | | | |
-| TC-SEC-004 | | | | | | |
-| TC-SEC-005 | | | | | | |
+| TC-SEC-004 | 2c239a3 | Automated error tests returned consistent JSON without stack traces; broader sensitive-detail review remains pending. | Partial | Varshitha S | 2026-10-28 | npm test output |
+| TC-SEC-005 | 2c239a3 | Automated authentication test verified that passwords were hashed, not stored as plaintext. | Pass | Varshitha S | 2026-10-28 | npm test output |
 | TC-UX-001 | | | | | | |
 | TC-NFR-001 | | | | | | |
-| TC-COMP-001 | | | | | | |
+| TC-COMP-001 | 2c239a3 | Core pages and selected workflows were exercised in Chrome; formal browser/version and resolution checklist remains pending. | Partial | Varshitha S | 2026-10-28 | Browser screenshots in conversation; checklist pending |
+| TC-REV-001 | | | | | | |
 
-## 7. Review Notes
+## 8. Review Notes
 
 - Keep all test case IDs consistent with the existing Test Plan and RTM.
 - Treat TC-SEC-001 and TC-SEC-005 as conditional when their features are not implemented.

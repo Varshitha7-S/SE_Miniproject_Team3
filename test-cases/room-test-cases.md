@@ -5,7 +5,7 @@
 **Tester:** Shailaja  
 **Backlog Item:** HMS-030  
 **Sprint:** Sprint 1  
-**Status:** Planned — not yet executed
+**Status:** Execution in progress — selected cases executed; see test-execution-log.md
 
 ## TC-ROOM-001: Add Room with Valid Details
 **Requirement:** HMS-FR-005  
