@@ -1,11 +1,14 @@
-
 # Requirements Traceability Matrix (RTM)
 
-**Project:** Hostel Management System  
-**Version:** 1.1  
-**Prepared by:** Varshitha S (QA Lead)  
-**Sprint:** Sprint 1  
-**Status:** Draft — pending final team review
+**Project:** Hostel Management System
+
+**Version:** 1.2
+
+**Prepared by:** Varshitha S (QA Lead)
+
+**Sprint:** Sprint 2
+
+**Status:** Draft - pending final team review
 
 ## 1. Purpose
 
@@ -37,7 +40,7 @@ This document maps the Hostel Management System requirements to the correspondin
 
 | Requirement ID | Requirement Summary | Design / Module | Test Case IDs | Status |
 |---|---|---|---|---|
-| HMS-NFR-001 | Usability of labels and common tasks | UI / Usability | TC-UX-001 | Planned |
+| HMS-NFR-001 | Usability of labels and common tasks | UI / Usability | TC-UX-001 | Passed |
 | HMS-NFR-002 | Common list/search operations complete within 3 seconds in the agreed test environment | API / UI Performance | TC-NFR-001 | Planned |
 | HMS-NFR-003 | Maintain room capacity and allocation data integrity | Allocation / Data Integrity | TC-ALLOC-002, TC-ALLOC-003, TC-ALLOC-006 | Planned |
 | HMS-NFR-004 | Security controls and safe password handling, if authentication is implemented | Authentication / Security | TC-SEC-001, TC-SEC-005, where applicable | Conditional |
@@ -69,22 +72,55 @@ This document maps the Hostel Management System requirements to the correspondin
 
 ## 6. Coverage Status Definitions
 
-- **Planned:** Test coverage is documented, but execution has not necessarily occurred.
-- **Conditional:** Applicable only if the optional feature is approved and implemented.
-- **Executed:** The test has been run against a testable build and its actual result recorded.
-- **Passed:** The actual result matches the expected result after execution.
-- **Failed:** The actual result does not match the expected result after execution.
-- **Blocked:** Execution could not proceed because of a documented dependency or environment issue.
+\- **Planned:** Test coverage is documented, but execution has not necessarily occurred.
+
+\- **Conditional:** Applicable only if the optional feature is approved and implemented.
+
+\- **Executed:** The test has been run against a testable build and its actual result recorded.
+
+\- **Passed:** The actual result matches the expected result after execution.
+
+\- **Failed:** The actual result does not match the expected result after execution.
+
+\- **Blocked:** Execution could not proceed because of a documented dependency or environment issue.
+
+\- **Partially Tested:** Some aspects of the requirement have been tested, but the complete acceptance criteria have not yet been verified.
 
 ## 7. Review and Maintenance
 
-1. Verify requirement descriptions against the SRS.
-2. Review allocation test cases with the Product Owner.
-3. Keep test case IDs consistent across the RTM, Test Plan, and detailed test-case documents.
-4. Update statuses only when supported by evidence.
-5. Document requirements that are not implemented or are excluded from the agreed MVP.
-6. Update the RTM whenever requirements or test cases change.
-7. Ensure every referenced test case is defined in the relevant test documentation.
+1\. Verify requirement descriptions against the SRS.
+
+2\. Review allocation test cases with the Product Owner.
+
+3\. Keep test case IDs consistent across the RTM, Test Plan, and detailed test-case documents.
+
+4\. Update statuses only when supported by evidence.
+
+5\. Document requirements that are not implemented or are excluded from the agreed MVP.
+
+6\. Update the RTM whenever requirements or test cases change.
+
+7\. Ensure every referenced test case is defined in the relevant test documentation.
+
+### Sprint 2 Usability Testing Update
+
+**Task:** HMS-028 - Run Team Usability Check
+
+**Requirement:** HMS-NFR-001
+
+**Test Case:** TC-UX-001 - Evaluate Labels, Navigation, and Task Clarity
+
+**Execution Outcome:** Passed
+
+**Results:** All five representative participants successfully completed both the student search and room availability tasks without assistance.
+
+**Successful Completion:** 5 out of 5 participants (100%).
+
+**Acceptance Criterion:** At least 4 out of 5 participants must complete both assigned tasks without assistance.
+
+**Evidence:** `test-cases/usability-test-results.md`
+
+The usability requirement HMS-NFR-001 is marked Passed based on the completed evaluation.
 
 ## 8. Approval
 
@@ -94,4 +130,4 @@ This document maps the Hostel Management System requirements to the correspondin
 | Dev Lead | Aditya Singhal | Pending review |
 | Product Owner | Krishna Tejas Voruganti | Allocation test cases and RTM mapping reviewed and approved in GitHub issue HMS-025 |
 
-**Document status:** Draft — pending Dev Lead review and final team approval.
+**Document Status:** Draft - pending Dev Lead review and final team approval.
