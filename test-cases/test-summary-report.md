@@ -256,10 +256,10 @@ The following coverage summary is based on the Sprint 2 RTM from HMS-027, update
 
 | Coverage Status | Number of Requirements |
 |---|---:|
-| Passed | 4 |
+| Passed | 3 |
 | Partially Tested | 2 |
 | Planned | 1 |
-| Conditional | 0 |
+| Conditional | 1 |
 | **Total** | **7** |
 
 HMS-NFR-001 is included under Passed based on the HMS-028 usability results.
@@ -278,10 +278,10 @@ HMS-NFR-001 is included under Passed based on the HMS-028 usability results.
 
 | Coverage Status | Number of Requirements |
 |---|---:|
-| Passed | 15 |
+| Passed | 14 |
 | Partially Tested | 10 |
 | Planned | 2 |
-| Conditional | 2 |
+| Conditional | 3 |
 | **Total** | **29** |
 
 The coverage figures represent requirement-level status classifications, not a count of individual test executions.
@@ -361,7 +361,7 @@ The Hostel Management System has successfully completed the selected automated b
 
 The automated backend suite achieved 38 successful tests with zero failures. Six formal manual UI test cases passed, two additional UI checks were successful, and all five participants passed the usability evaluation.
 
-The RTM indicates that 15 of the 29 tracked requirements are passed, 10 are partially tested, two remain planned, and two are conditional.
+The RTM indicates that 14 of the 29 tracked requirements are passed, 10 are partially tested, two remain planned, and three are conditional.
 
 No open GitHub issues labelled as bugs were identified during the defect review conducted on 1 November 2026.
 
