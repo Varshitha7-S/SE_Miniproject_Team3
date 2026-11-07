@@ -139,5 +139,6 @@ The dashboard correctly reflected the updated occupancy after the allocation was
 **Status:** PASS
 
 **Evidence:**
+- [Allocation Vacated Confirmation](../docs/evidence/37-allocation-vacated-confirmation.png)
 - [Dashboard Before Vacating](../docs/evidence/35-dashboard-before-vacating.png)
 - [Dashboard After Vacating](../docs/evidence/36-dashboard-after-vacating.png)
