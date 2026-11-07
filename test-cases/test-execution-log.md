@@ -39,7 +39,7 @@
 | TC-DASH-001 | Team development build | Dashboard displayed the recorded student count of 3. | Pass | Shailaja P.C. | 26 Oct 2026 | [Intermediate Counts](../docs/evidence/24-dashboard-intermediate-counts.png), [Final Counts](../docs/evidence/31-dashboard-final-counts.png) |
 | TC-DASH-002 | Team development build | Dashboard displayed the recorded room count of 3. | Pass | Shailaja P.C. | 26 Oct 2026 | [Intermediate Counts](../docs/evidence/24-dashboard-intermediate-counts.png), [Final Counts](../docs/evidence/31-dashboard-final-counts.png) |
 | TC-DASH-003 | Team development build | Dashboard displayed total capacity 9, occupied spaces 2, and available spaces 7 for the recorded verification. | Pass | Shailaja P.C. | 26 Oct 2026 | [Intermediate Counts](../docs/evidence/24-dashboard-intermediate-counts.png), [Final Counts](../docs/evidence/31-dashboard-final-counts.png) |
-| TC-DASH-004 | Team development build | After vacating an allocation, occupied spaces decreased from 1 to 0, free spaces increased from 12 to 13, and total capacity remained 13. | Pass | Shailaja P.C. | 26 Oct 2026 | [Before Vacating](../docs/evidence/35-dashboard-before-vacating.png), [After Vacating](../docs/evidence/36-dashboard-after-vacating.png) |
+| TC-DASH-004 | Team development build | After vacating an allocation, occupied spaces decreased from 1 to 0, free spaces increased from 12 to 13, and total capacity remained 13. | Pass | Shailaja P.C. | 26 Oct 2026 | [Allocation Vacated](../docs/evidence/37-allocation-vacated-confirmation.png), [Before Vacating](../docs/evidence/35-dashboard-before-vacating.png), [After Vacating](../docs/evidence/36-dashboard-after-vacating.png) |
 
 **Total Manual Test Cases:** 27  
 **Passed:** 27  
@@ -132,6 +132,7 @@ The recorded dashboard values for the corresponding verification were:
 | Total Capacity | 13 |
 
 Evidence:
+- [Allocation Vacated Confirmation](../docs/evidence/37-allocation-vacated-confirmation.png)
 - [Dashboard Before Vacating](../docs/evidence/35-dashboard-before-vacating.png)
 - [Dashboard After Vacating](../docs/evidence/36-dashboard-after-vacating.png)
 
