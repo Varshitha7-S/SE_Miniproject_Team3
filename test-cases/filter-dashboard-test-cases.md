@@ -34,6 +34,10 @@
 
 **Expected Result:** Only allocations matching the selected status are displayed.
 
+**Actual Result:** Selecting the Vacated status displayed vacated allocation records. The displayed records matched the selected status.
+
+**Status:** PASS
+
 **Evidence:**
 - [Vacated Allocation Records](../docs/evidence/28-vacated-allocation-records.png)
 - [Vacated Filter – Room C301](../docs/evidence/29-vacated-filter-room-C301.png)
@@ -48,6 +52,10 @@
 3. Observe the results.
 
 **Expected Result:** A clear empty-results message appears, without unrelated records.
+
+**Actual Result:** Combining the Vacated status with room C303 returned no matching allocation records. The application displayed the no-matching-results state.
+
+**Status:** PASS
 
 **Evidence:** [No Matching Results – C303](../docs/evidence/30-vacated-filter-no-match-C303.png)
 
