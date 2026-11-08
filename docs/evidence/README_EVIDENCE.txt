@@ -54,4 +54,4 @@ REVIEWER CORRECTION STATUS
 - TC-ALLOC-006: Both successful allocation and subsequent full-room rejection are shown in 27-allocation-success-and-full-room-rejection.png.
 - TC-DASH-004: Before, operation confirmation, and after are shown in 35, 37, and 36 respectively. Dashboard values changed from occupied 1/free 12 to occupied 0/free 13; total capacity remained 13.
 
-Important: This archive contains the evidence folder only. It does not include the test-case documents or execution log. Update those separately after the clean TC-ROOM-005 screenshot is captured.
+
