@@ -37,7 +37,7 @@ This document maps the Hostel Management System requirements to the correspondin
 | **Requirement ID** | **Requirement Summary** | **Design / Module** | **Test Case IDs** | **Status** |
 |---|---|---|---|---|
 | HMS-NFR-001 | Usability of labels and common tasks | UI / Usability | TC-UX-001 | Planned |
-| HMS-NFR-002 | Common list/search operations complete within 3 seconds in the agreed test environment | API / UI Performance | TC-NFR-001 | Passed |
+| HMS-NFR-002 | Common list/search operations complete within 3 seconds in the agreed test environment | API / UI Performance | TC-NFR-001 | Executed |
 | HMS-NFR-003 | Maintain room capacity and allocation data integrity | Allocation / Data Integrity | TC-ALLOC-002, TC-ALLOC-003, TC-ALLOC-006 | Passed |
 | HMS-NFR-004 | Security controls and safe password handling, if authentication is implemented | Authentication / Security | TC-SEC-001, TC-SEC-005, where applicable | Conditional |
 | HMS-NFR-005 | Maintainable separation of application responsibilities | Code Structure / Documentation | TC-REV-001 | Planned |
