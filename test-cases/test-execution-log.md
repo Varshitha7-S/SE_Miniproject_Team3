@@ -173,6 +173,8 @@ Evidence:
 - [Dashboard Before Vacating](../docs/evidence/35-dashboard-before-vacating.png)
 - [Dashboard After Vacating](../docs/evidence/36-dashboard-after-vacating.png)
 
+**Traceability Note:** This automated API performance check is recorded as an executed supplementary performance test. It does not replace the formal ten-operation measurement procedure specified in `quality-test-cases.md` for TC-NFR-001. The formal test-case result remains pending until the required individual timings and environment details are recorded.
+
 ## 6. Defect Summary
 
 No failed test cases were recorded in the execution results.
