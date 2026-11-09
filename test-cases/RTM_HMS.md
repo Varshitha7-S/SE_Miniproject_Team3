@@ -1,11 +1,10 @@
-﻿
 # Requirements Traceability Matrix (RTM)
 
 **Project:** Hostel Management System
 **Version:** 1.1
 **Prepared by:** Varshitha S (QA Lead)
 **Sprint:** Sprint 1; updated during Sprint 2 on 28 October 2026
-**Status:** Draft â€” Sprint 2 execution results recorded; pending final team review
+**Status:** Draft — Sprint 2 execution results recorded; pending final team review
 
 ## 1. Purpose
 
@@ -87,7 +86,7 @@ This document maps the Hostel Management System requirements to the correspondin
 6. Update the RTM whenever requirements or test cases change.
 7. Ensure every referenced test case is defined in the relevant test documentation.
 
-## 8. Sprint 2 Execution Update â€” 28 October 2026
+## 8. Sprint 2 Execution Update — 28 October 2026
 
 - Detailed actual results and limitations are recorded in `test-cases/test-execution-log.md`.
 - Automated backend suite: 38 of 38 tests passed.
@@ -106,7 +105,4 @@ This document maps the Hostel Management System requirements to the correspondin
 | Dev Lead | Aditya Singhal | Pending review |
 | Product Owner | Krishna Tejas Voruganti | Allocation test cases and RTM mapping reviewed and approved in GitHub issue HMS-025 |
 
-**Document status:** Draft â€” pending Dev Lead review and final team approval.
-
-
-
+**Document status:** Draft — pending Dev Lead review and final team approval.
