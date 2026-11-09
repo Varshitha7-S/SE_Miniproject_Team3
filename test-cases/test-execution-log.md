@@ -1,4 +1,4 @@
-﻿# HMS Test Execution Log
+# HMS Test Execution Log
 
 **Project:** Hostel Management System  
 **Tester:** Shailaja P.C.  
@@ -45,7 +45,7 @@
 **Passed:** 26  
 **Failed:** 0
 
-## 2. Additional API Negative Test â€” TC-ALLOC-007
+## 2. Additional API Negative Test — TC-ALLOC-007
 
 **Execution Date:** 02 Nov 2026  
 **Test Type:** Authenticated Backend API Negative Test  
@@ -95,7 +95,7 @@ The automated backend API test execution completed with 40 passing tests and no 
 - Two dashboard tests were added.
 - Subsequent verified execution: 40 tests passed.
 
-## 4. Supplementary Automated Performance Check â€” HMS-020
+## 4. Supplementary Automated Performance Check — HMS-020
 
 **Requirement:** HMS-NFR-002  
 **Automated Test Group:** `Performance (HMS-020)`  
@@ -122,7 +122,7 @@ The supplementary automated performance check:
 
 All performance assertions passed during the verified 40-test execution. Each measured request satisfied the under-3000-millisecond assertion.
 
-**Status:** PASS â€” supplementary automated HMS-020 check.
+**Status:** PASS — supplementary automated HMS-020 check.
 
 ### Evidence and Measurement Limitation
 
@@ -130,13 +130,13 @@ The supporting evidence is the automated performance test implementation in `bac
 
 The test code does not save or print individual response-time values. The 14.785-second value is the total Jest suite runtime, not an individual API response time.
 
-### Formal Test Case TC-NFR-001 â€” Pending
+### Formal Test Case TC-NFR-001 — Pending
 
 The formal TC-NFR-001 procedure in `quality-test-cases.md` requires ten measured list/search operations, individual timing records, and test-environment details.
 
 The supplementary automated HMS-020 check does not replace this formal procedure.
 
-**Status:** PENDING â€” formal TC-NFR-001 measurement and evidence have not yet been completed.
+**Status:** PENDING — formal TC-NFR-001 measurement and evidence have not yet been completed.
 
 ## 5. Dashboard Verification
 

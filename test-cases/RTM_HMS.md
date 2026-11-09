@@ -20,16 +20,16 @@ This document maps the Hostel Management System requirements to the correspondin
 | HMS-FR-003 | Update student details | Student Management | TC-STU-005 | Passed |
 | HMS-FR-004 | Search students by identifier or name | Student Management | TC-STU-004, TC-STU-006 | Passed |
 | HMS-FR-005 | Add a room with a unique room number and positive capacity | Room Management | TC-ROOM-001, TC-ROOM-002, TC-ROOM-003 | Passed |
-| HMS-FR-006 | Display room capacity, occupancy, and remaining capacity | Room Management / Allocation Service | TC-ROOM-004, TC-ROOM-007, TC-ALLOC-001, TC-ALLOC-004, TC-ALLOC-005, TC-ALLOC-006 | Partially tested |
-| HMS-FR-007 | Allocate a student to a room with available capacity | Allocation Service / UI | TC-ALLOC-001, TC-ALLOC-007 | Partially tested |
-| HMS-FR-008 | Reject allocation when the room is full | Allocation Validation | TC-ALLOC-002, TC-ALLOC-006 | Partially tested |
+| HMS-FR-006 | Display room capacity, occupancy, and remaining capacity | Room Management / Allocation Service | TC-ROOM-004, TC-ROOM-007, TC-ALLOC-001, TC-ALLOC-004, TC-ALLOC-005, TC-ALLOC-006 | Passed |
+| HMS-FR-007 | Allocate a student to a room with available capacity | Allocation Service / UI | TC-ALLOC-001, TC-ALLOC-007 | Passed |
+| HMS-FR-008 | Reject allocation when the room is full | Allocation Validation | TC-ALLOC-002, TC-ALLOC-006 | Passed |
 | HMS-FR-009 | Prevent multiple active allocations for the same student | Allocation Validation | TC-ALLOC-003 | Passed |
 | HMS-FR-010 | Change a student's room allocation | Allocation Service / UI | TC-ALLOC-004 | Passed |
-| HMS-FR-011 | Mark a student as having vacated a room | Allocation Service / UI | TC-ALLOC-005 | Partially tested |
+| HMS-FR-011 | Mark a student as having vacated a room | Allocation Service / UI | TC-ALLOC-005 | Passed |
 | HMS-FR-012 | Manage fee amount and payment status, if approved | Fee Management | TC-FEE-001, if implemented | Conditional |
-| HMS-FR-013 | Filter rooms by availability and allocations by status | Search / Filter UI / API | TC-FILT-001, TC-FILT-002, TC-FILT-003 | Partially tested |
+| HMS-FR-013 | Filter rooms by availability and allocations by status | Search / Filter UI / API | TC-FILT-001, TC-FILT-002, TC-FILT-003 | Passed |
 | HMS-FR-014 | Protect administrative actions with authorization, if implemented | Authentication / Authorization | TC-SEC-001, if implemented | Passed |
-| HMS-FR-015 | Display dashboard summaries | Dashboard | TC-DASH-001, TC-DASH-002, TC-DASH-003, TC-DASH-004 | Partially tested |
+| HMS-FR-015 | Display dashboard summaries | Dashboard | TC-DASH-001, TC-DASH-002, TC-DASH-003, TC-DASH-004 | Passed |
 | HMS-FR-016 | Validate required fields and display understandable messages | Input Validation | TC-STU-003, TC-ROOM-003, TC-ROOM-005, TC-SEC-002 | Passed |
 | HMS-FR-017 | View allocation history, if approved | Allocation History | TC-HIST-001, if approved and implemented | Conditional |
 
@@ -38,7 +38,7 @@ This document maps the Hostel Management System requirements to the correspondin
 | Requirement ID | Requirement Summary | Design / Module | Test Case IDs | Status |
 |---|---|---|---|---|
 | HMS-NFR-001 | Usability of labels and common tasks | UI / Usability | TC-UX-001 | Planned |
-| HMS-NFR-002 | Common list/search operations complete within 3 seconds in the agreed test environment | API / UI Performance | TC-NFR-001 | Partially tested |
+| HMS-NFR-002 | Common list/search operations complete within 3 seconds in the agreed test environment | API / UI Performance | TC-NFR-001 (formal), HMS-020 (supplementary automated check) | Partially tested |
 | HMS-NFR-003 | Maintain room capacity and allocation data integrity | Allocation / Data Integrity | TC-ALLOC-002, TC-ALLOC-003, TC-ALLOC-006 | Passed |
 | HMS-NFR-004 | Security controls and safe password handling, if authentication is implemented | Authentication / Security | TC-SEC-001, TC-SEC-005, where applicable | Passed |
 | HMS-NFR-005 | Maintainable separation of application responsibilities | Code Structure / Documentation | TC-REV-001 | Planned |
@@ -94,7 +94,7 @@ This document maps the Hostel Management System requirements to the correspondin
 - Manual UI checks passed for student search by ID and name, no-match student search, room-availability filtering, allocation filters, and the room-change workflow.
 - The room-change workflow closed AL003, created AL009 as active in R103, and updated room occupancy.
 - API performance checks passed; browser-based timing remains pending.
-- Five-participant usability testing, the formal browser-compatibility checklist, no-match filter testing, maintainability review, and other unexecuted cases remain pending.
+- Five-participant usability testing, the formal browser-compatibility checklist, maintainability review, and other unexecuted cases remain pending.
 - No reproducible defect was observed in the executed checks. This does not mean untested functionality is defect-free. Any identified defect must have a severity, owner, reproduction steps, and evidence.
 - This RTM update is a draft pending team review.
 
@@ -107,5 +107,6 @@ This document maps the Hostel Management System requirements to the correspondin
 | Product Owner | Krishna Tejas Voruganti | Allocation test cases and RTM mapping reviewed and approved in GitHub issue HMS-025 |
 
 **Document status:** Draft â€” pending Dev Lead review and final team approval.
+
 
 

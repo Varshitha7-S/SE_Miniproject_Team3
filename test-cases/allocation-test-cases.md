@@ -1,4 +1,4 @@
-﻿# Allocation Management Test Cases
+# Allocation Management Test Cases
 
 **Project:** Hostel Management System  
 **Backlog Item:** HMS-025  
