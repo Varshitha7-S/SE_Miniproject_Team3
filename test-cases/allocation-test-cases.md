@@ -107,19 +107,20 @@
 
 **Evidence:** [Successful First Allocation and Subsequent Full-Room Rejection](../docs/evidence/27-allocation-success-and-full-room-rejection.png)
 
-## TC-ALLOC-007: Reject Invalid Student or Room
+## TC-ALLOC-007: Reject Invalid Student Reference
 
-**Preconditions:** An invalid or nonexistent student ID or room ID can be submitted for validation.
+**Preconditions:** A nonexistent student ID can be submitted with an existing room ID.
 
 **Steps:**
-1. Attempt an allocation using an invalid student or room ID.
+1. Submit an allocation request using a nonexistent student ID and an existing room ID.
 2. Submit the request.
 3. Observe the API response.
 
-**Expected Result:** The invalid allocation is rejected with an appropriate error, and no allocation or occupancy data is incorrectly changed.
+**Expected Result:** The request using the nonexistent student ID is rejected with an appropriate error, and no allocation is created for that student.
 
 **Actual Result:** An authenticated API request using nonexistent student ID `NO-SUCH-STU-999` and room ID `RC303` returned HTTP `404` with the message `Student NO-SUCH-STU-999 not found`.
 
 **Status:** PASS
 
 **Evidence:** [Invalid Student Allocation Rejected](../docs/evidence/32-invalid-student-allocation-rejected.png)
+
