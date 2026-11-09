@@ -1,10 +1,10 @@
 # Requirements Traceability Matrix (RTM)
 
 **Project:** Hostel Management System
-**Version:** 1.1
+**Version:** 1.2
 **Prepared by:** Varshitha S (QA Lead)
-**Sprint:** Sprint 1; updated during Sprint 2 on 28 October 2026
-**Status:** Draft — Sprint 2 execution results recorded; pending final team review
+**Sprint:** Sprint 1; updated during Sprint 2 on 28 October and 31 October 2026
+**Status:** Draft - Sprint 2 execution results recorded; usability evaluation completed; pending final team review
 
 ## 1. Purpose
 
@@ -36,7 +36,7 @@ This document maps the Hostel Management System requirements to the correspondin
 
 | Requirement ID | Requirement Summary | Design / Module | Test Case IDs | Status |
 |---|---|---|---|---|
-| HMS-NFR-001 | Usability of labels and common tasks | UI / Usability | TC-UX-001 | Planned |
+| HMS-NFR-001 | Usability of labels and common tasks | UI / Usability | TC-UX-001 | Passed |
 | HMS-NFR-002 | Common list/search operations complete within 3 seconds in the agreed test environment | API / UI Performance | TC-NFR-001 (formal), HMS-020 (supplementary automated check) | Partially tested |
 | HMS-NFR-003 | Maintain room capacity and allocation data integrity | Allocation / Data Integrity | TC-ALLOC-002, TC-ALLOC-003, TC-ALLOC-006 | Passed |
 | HMS-NFR-004 | Security controls and safe password handling, if authentication is implemented | Authentication / Security | TC-SEC-001, TC-SEC-005, where applicable | Passed |
@@ -93,10 +93,27 @@ This document maps the Hostel Management System requirements to the correspondin
 - Manual UI checks passed for student search by ID and name, no-match student search, room-availability filtering, allocation filters, and the room-change workflow.
 - The room-change workflow closed AL003, created AL009 as active in R103, and updated room occupancy.
 - API performance checks passed; browser-based timing remains pending.
-- Five-participant usability testing, the formal browser-compatibility checklist, maintainability review, and other unexecuted cases remain pending.
+- The five-participant usability evaluation was pending at the time of this 28 October update. The formal browser-compatibility checklist, maintainability review, and other unexecuted cases also remained pending.
 - No reproducible defect was observed in the executed checks. This does not mean untested functionality is defect-free. Any identified defect must have a severity, owner, reproduction steps, and evidence.
 - This RTM update is a draft pending team review.
 
+### Usability Testing Update - 31 October 2026
+
+**Task:** HMS-028 - Run Team Usability Check
+
+**Requirement:** HMS-NFR-001
+
+**Test Case:** TC-UX-001 - Evaluate Labels, Navigation, and Task Clarity
+
+**Execution Outcome:** Passed
+
+**Results:** All five participants completed both the student search and room availability tasks without assistance.
+
+**Successful Completion:** 5 out of 5 participants (100%).
+
+**Acceptance Criterion:** At least 4 out of 5 participants must complete both tasks without assistance.
+
+**Evidence:** `test-cases/usability-test-results.md`
 ## 9. Approval
 
 | Role | Name | Status |
