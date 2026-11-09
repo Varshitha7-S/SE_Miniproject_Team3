@@ -214,7 +214,24 @@ Record actual results only after executing a test against a testable build. Opti
 
 **Evidence:** Browser/version details and screenshots or notes for any compatibility defects.
 
-## 6. Execution Record
+## 6. Maintainability Test Case
+
+### TC-REV-001 - Review Modular Code Organization
+
+- **Requirement:** HMS-NFR-005
+- **Priority:** Low
+- **Preconditions:** Access to the current frontend/backend source code and setup documentation.
+- **Steps:**
+  1. Review the frontend pages and components and identify their responsibilities.
+  2. Review backend routes, models, validation, configuration, and allocation logic.
+  3. Confirm that the frontend communicates with the backend through the API rather than connecting directly to MongoDB.
+  4. Review the README and API documentation for setup and endpoint guidance.
+  5. Record unclear responsibilities or missing documentation as observations.
+  6. If a reproducible defect is found, create a GitHub issue with severity, owner, reproduction steps, and evidence.
+- **Expected result:** Frontend, backend, and data-access responsibilities are separated into understandable modules, and setup instructions are documented.
+- **Evidence:** Reviewed file paths, observations, and any linked defect issue.
+- **Status:** Planned - not yet executed.
+## 7. Execution Record
 
 The following table records the tests actually executed. Partially executed and pending tests are identified separately.
 
@@ -228,6 +245,7 @@ The following table records the tests actually executed. Partially executed and 
 | TC-UX-001 | 2c239a3 (main) | All five participants independently completed student search and room availability tasks without assistance. Successful completion rate: 5/5 (100%). | Pass | Varshitha S | 31-Oct-2026 | test-cases/usability-test-results.md |
 | TC-NFR-001 | 2c239a3 (main) | Formal measurement of ten browser-based list/search operations has not yet been performed. API performance checks were performed separately. | Not Run | - | - | Browser timing measurements pending |
 | TC-COMP-001 | 2c239a3 (main) | Selected core pages and workflows were exercised in Chrome on Windows. The formal browser-version and desktop-resolution compatibility checklist remains pending. | Partial | Varshitha S | 28-Oct-2026 | Selected UI observations in test-execution-log.md |
+| TC-REV-001 | - | Maintainability review has not yet been executed. | Not Run | - | - | Pending review |
 
 **Status definitions:**
 
@@ -241,7 +259,7 @@ The following table records the tests actually executed. Partially executed and 
 
 - **Not Run:** The test case has not yet been executed.
 
-## 7. Review Notes
+## 8. Review Notes
 
 1. Keep all test case IDs consistent with the existing Test Plan and RTM.
 

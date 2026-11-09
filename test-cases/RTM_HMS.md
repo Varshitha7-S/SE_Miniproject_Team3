@@ -1,14 +1,10 @@
 # Requirements Traceability Matrix (RTM)
 
 **Project:** Hostel Management System
-
 **Version:** 1.2
-
 **Prepared by:** Varshitha S (QA Lead)
-
-**Sprint:** Sprint 2
-
-**Status:** Draft - pending final team review
+**Sprint:** Sprint 1; updated during Sprint 2 on 28 October and 31 October 2026
+**Status:** Draft - Sprint 2 execution results recorded; usability evaluation completed; pending final team review
 
 ## 1. Purpose
 
@@ -18,22 +14,22 @@ This document maps the Hostel Management System requirements to the correspondin
 
 | Requirement ID | Requirement Summary | Design / Module | Test Case IDs | Status |
 |---|---|---|---|---|
-| HMS-FR-001 | Create student with a unique identifier | Student Management | TC-STU-001, TC-STU-002 | Planned |
-| HMS-FR-002 | View student details | Student Management | TC-STU-007 | Planned |
-| HMS-FR-003 | Update student details | Student Management | TC-STU-005 | Planned |
-| HMS-FR-004 | Search students by identifier or name | Student Management | TC-STU-004, TC-STU-006 | Planned |
-| HMS-FR-005 | Add a room with a unique room number and positive capacity | Room Management | TC-ROOM-001, TC-ROOM-002, TC-ROOM-003 | Planned |
-| HMS-FR-006 | Display room capacity, occupancy, and remaining capacity | Room Management / Allocation Service | TC-ROOM-004, TC-ROOM-007, TC-ALLOC-001, TC-ALLOC-004, TC-ALLOC-005, TC-ALLOC-006 | Planned |
-| HMS-FR-007 | Allocate a student to a room with available capacity | Allocation Service / UI | TC-ALLOC-001, TC-ALLOC-007 | Planned |
-| HMS-FR-008 | Reject allocation when the room is full | Allocation Validation | TC-ALLOC-002, TC-ALLOC-006 | Planned |
-| HMS-FR-009 | Prevent multiple active allocations for the same student | Allocation Validation | TC-ALLOC-003 | Planned |
-| HMS-FR-010 | Change a student's room allocation | Allocation Service / UI | TC-ALLOC-004 | Planned |
-| HMS-FR-011 | Mark a student as having vacated a room | Allocation Service / UI | TC-ALLOC-005 | Planned |
+| HMS-FR-001 | Create student with a unique identifier | Student Management | TC-STU-001, TC-STU-002 | Passed |
+| HMS-FR-002 | View student details | Student Management | TC-STU-007 | Passed |
+| HMS-FR-003 | Update student details | Student Management | TC-STU-005 | Passed |
+| HMS-FR-004 | Search students by identifier or name | Student Management | TC-STU-004, TC-STU-006 | Passed |
+| HMS-FR-005 | Add a room with a unique room number and positive capacity | Room Management | TC-ROOM-001, TC-ROOM-002, TC-ROOM-003 | Passed |
+| HMS-FR-006 | Display room capacity, occupancy, and remaining capacity | Room Management / Allocation Service | TC-ROOM-004, TC-ROOM-007, TC-ALLOC-001, TC-ALLOC-004, TC-ALLOC-005, TC-ALLOC-006 | Passed |
+| HMS-FR-007 | Allocate a student to a room with available capacity | Allocation Service / UI | TC-ALLOC-001, TC-ALLOC-007 | Passed |
+| HMS-FR-008 | Reject allocation when the room is full | Allocation Validation | TC-ALLOC-002, TC-ALLOC-006 | Passed |
+| HMS-FR-009 | Prevent multiple active allocations for the same student | Allocation Validation | TC-ALLOC-003 | Passed |
+| HMS-FR-010 | Change a student's room allocation | Allocation Service / UI | TC-ALLOC-004 | Passed |
+| HMS-FR-011 | Mark a student as having vacated a room | Allocation Service / UI | TC-ALLOC-005 | Passed |
 | HMS-FR-012 | Manage fee amount and payment status, if approved | Fee Management | TC-FEE-001, if implemented | Conditional |
-| HMS-FR-013 | Filter rooms by availability and allocations by status | Search / Filter UI / API | TC-FILT-001, TC-FILT-002, TC-FILT-003 | Planned |
-| HMS-FR-014 | Protect administrative actions with authorization, if implemented | Authentication / Authorization | TC-SEC-001, if implemented | Conditional |
-| HMS-FR-015 | Display dashboard summaries | Dashboard | TC-DASH-001, TC-DASH-002, TC-DASH-003, TC-DASH-004 | Planned |
-| HMS-FR-016 | Validate required fields and display understandable messages | Input Validation | TC-STU-003, TC-ROOM-003, TC-ROOM-005, TC-SEC-002 | Planned |
+| HMS-FR-013 | Filter rooms by availability and allocations by status | Search / Filter UI / API | TC-FILT-001, TC-FILT-002, TC-FILT-003 | Passed |
+| HMS-FR-014 | Protect administrative actions with authorization, if implemented | Authentication / Authorization | TC-SEC-001, if implemented | Passed |
+| HMS-FR-015 | Display dashboard summaries | Dashboard | TC-DASH-001, TC-DASH-002, TC-DASH-003, TC-DASH-004 | Passed |
+| HMS-FR-016 | Validate required fields and display understandable messages | Input Validation | TC-STU-003, TC-ROOM-003, TC-ROOM-005, TC-SEC-002 | Passed |
 | HMS-FR-017 | View allocation history, if approved | Allocation History | TC-HIST-001, if approved and implemented | Conditional |
 
 ## 3. Non-Functional Requirements Traceability
@@ -41,22 +37,22 @@ This document maps the Hostel Management System requirements to the correspondin
 | Requirement ID | Requirement Summary | Design / Module | Test Case IDs | Status |
 |---|---|---|---|---|
 | HMS-NFR-001 | Usability of labels and common tasks | UI / Usability | TC-UX-001 | Passed |
-| HMS-NFR-002 | Common list/search operations complete within 3 seconds in the agreed test environment | API / UI Performance | TC-NFR-001 | Planned |
-| HMS-NFR-003 | Maintain room capacity and allocation data integrity | Allocation / Data Integrity | TC-ALLOC-002, TC-ALLOC-003, TC-ALLOC-006 | Planned |
-| HMS-NFR-004 | Security controls and safe password handling, if authentication is implemented | Authentication / Security | TC-SEC-001, TC-SEC-005, where applicable | Conditional |
+| HMS-NFR-002 | Common list/search operations complete within 3 seconds in the agreed test environment | API / UI Performance | TC-NFR-001 (formal), HMS-020 (supplementary automated check) | Partially tested |
+| HMS-NFR-003 | Maintain room capacity and allocation data integrity | Allocation / Data Integrity | TC-ALLOC-002, TC-ALLOC-003, TC-ALLOC-006 | Passed |
+| HMS-NFR-004 | Security controls and safe password handling, if authentication is implemented | Authentication / Security | TC-SEC-001, TC-SEC-005, where applicable | Passed |
 | HMS-NFR-005 | Maintainable separation of application responsibilities | Code Structure / Documentation | TC-REV-001 | Planned |
-| HMS-NFR-006 | Compatibility with the target Chromium-based browser | Browser Compatibility | TC-COMP-001 | Planned |
-| HMS-NFR-007 | Validate input before saving data | Input Validation | TC-STU-003, TC-ROOM-003, TC-ROOM-005, TC-SEC-002 | Planned |
+| HMS-NFR-006 | Compatibility with the target Chromium-based browser | Browser Compatibility | TC-COMP-001 | Partially tested |
+| HMS-NFR-007 | Validate input before saving data | Input Validation | TC-STU-003, TC-ROOM-003, TC-ROOM-005, TC-SEC-002 | Passed |
 
 ## 4. Security Requirements Traceability
 
 | Requirement ID | Requirement Summary | Design / Module | Test Case IDs | Status |
 |---|---|---|---|---|
-| HMS-SR-001 | Deny unauthenticated administrative actions when login is implemented | Authentication / Authorization | TC-SEC-001, if implemented | Conditional |
-| HMS-SR-002 | Validate user-supplied data on the server | Backend Validation | TC-SEC-002 | Planned |
+| HMS-SR-001 | Deny unauthenticated administrative actions when login is implemented | Authentication / Authorization | TC-SEC-001, if implemented | Passed |
+| HMS-SR-002 | Validate user-supplied data on the server | Backend Validation | TC-SEC-002 | Passed |
 | HMS-SR-003 | Keep secrets and database credentials out of committed source code | Configuration / Repository | TC-SEC-003 | Planned |
-| HMS-SR-004 | Avoid exposing sensitive details in user-facing errors | Error Handling | TC-SEC-004 | Planned |
-| HMS-SR-005 | Hash stored passwords if password storage is implemented | Authentication / Password Storage | TC-SEC-005, if applicable | Conditional |
+| HMS-SR-004 | Avoid exposing sensitive details in user-facing errors | Error Handling | TC-SEC-004 | Partially tested |
+| HMS-SR-005 | Hash stored passwords if password storage is implemented | Authentication / Password Storage | TC-SEC-005, if applicable | Passed |
 
 ## 5. Allocation Test Case Traceability
 
@@ -68,41 +64,40 @@ This document maps the Hostel Management System requirements to the correspondin
 | TC-ALLOC-004 | Change student room | HMS-FR-010, HMS-FR-006 | Previous allocation is closed, the new allocation is recorded, and room occupancy is updated correctly. |
 | TC-ALLOC-005 | Vacate an allocated room | HMS-FR-011, HMS-FR-006 | Active allocation ends and available capacity increases. |
 | TC-ALLOC-006 | Test room capacity boundary | HMS-FR-008, HMS-NFR-003, HMS-FR-006 | The final available space can be allocated; a further allocation is rejected, and capacity is never exceeded. |
-| TC-ALLOC-007 | Reject invalid student or room references | HMS-FR-007, HMS-SR-002 | Invalid allocation is rejected without incorrect data changes. |
+| TC-ALLOC-007 | Reject allocation with a nonexistent student ID | HMS-FR-007, HMS-SR-002 | The request is rejected and no allocation is created for the nonexistent student. |
 
 ## 6. Coverage Status Definitions
 
-\- **Planned:** Test coverage is documented, but execution has not necessarily occurred.
-
-\- **Conditional:** Applicable only if the optional feature is approved and implemented.
-
-\- **Executed:** The test has been run against a testable build and its actual result recorded.
-
-\- **Passed:** The actual result matches the expected result after execution.
-
-\- **Failed:** The actual result does not match the expected result after execution.
-
-\- **Blocked:** Execution could not proceed because of a documented dependency or environment issue.
-
-\- **Partially Tested:** Some aspects of the requirement have been tested, but the complete acceptance criteria have not yet been verified.
+- **Planned:** Test coverage is documented, but execution has not necessarily occurred.
+- **Partially tested:** Some linked test cases have been executed, but remaining coverage is pending; see the test execution log.
+- **Conditional:** Applicable only if the optional feature is approved and implemented.
+- **Executed:** The test has been run against a testable build and its actual result recorded.
+- **Passed:** The actual result matches the expected result after execution.
+- **Failed:** The actual result does not match the expected result after execution.
+- **Blocked:** Execution could not proceed because of a documented dependency or environment issue.
 
 ## 7. Review and Maintenance
 
-1\. Verify requirement descriptions against the SRS.
+1. Verify requirement descriptions against the SRS.
+2. Review allocation test cases with the Product Owner.
+3. Keep test case IDs consistent across the RTM, Test Plan, and detailed test-case documents.
+4. Update statuses only when supported by evidence.
+5. Document requirements that are not implemented or are excluded from the agreed MVP.
+6. Update the RTM whenever requirements or test cases change.
+7. Ensure every referenced test case is defined in the relevant test documentation.
 
-2\. Review allocation test cases with the Product Owner.
+## 8. Sprint 2 Execution Update — 28 October 2026
 
-3\. Keep test case IDs consistent across the RTM, Test Plan, and detailed test-case documents.
+- Detailed actual results and limitations are recorded in `test-cases/test-execution-log.md`.
+- Automated backend suite: 38 of 38 tests passed.
+- Manual UI checks passed for student search by ID and name, no-match student search, room-availability filtering, allocation filters, and the room-change workflow.
+- The room-change workflow closed AL003, created AL009 as active in R103, and updated room occupancy.
+- API performance checks passed; browser-based timing remains pending.
+- The five-participant usability evaluation was pending at the time of this 28 October update. The formal browser-compatibility checklist, maintainability review, and other unexecuted cases also remained pending.
+- No reproducible defect was observed in the executed checks. This does not mean untested functionality is defect-free. Any identified defect must have a severity, owner, reproduction steps, and evidence.
+- This RTM update is a draft pending team review.
 
-4\. Update statuses only when supported by evidence.
-
-5\. Document requirements that are not implemented or are excluded from the agreed MVP.
-
-6\. Update the RTM whenever requirements or test cases change.
-
-7\. Ensure every referenced test case is defined in the relevant test documentation.
-
-### Sprint 2 Usability Testing Update
+### Usability Testing Update - 31 October 2026
 
 **Task:** HMS-028 - Run Team Usability Check
 
@@ -112,17 +107,14 @@ This document maps the Hostel Management System requirements to the correspondin
 
 **Execution Outcome:** Passed
 
-**Results:** All five representative participants successfully completed both the student search and room availability tasks without assistance.
+**Results:** All five participants completed both the student search and room availability tasks without assistance.
 
 **Successful Completion:** 5 out of 5 participants (100%).
 
-**Acceptance Criterion:** At least 4 out of 5 participants must complete both assigned tasks without assistance.
+**Acceptance Criterion:** At least 4 out of 5 participants must complete both tasks without assistance.
 
 **Evidence:** `test-cases/usability-test-results.md`
-
-The usability requirement HMS-NFR-001 is marked Passed based on the completed evaluation.
-
-## 8. Approval
+## 9. Approval
 
 | Role | Name | Status |
 |---|---|---|
@@ -130,4 +122,4 @@ The usability requirement HMS-NFR-001 is marked Passed based on the completed ev
 | Dev Lead | Aditya Singhal | Pending review |
 | Product Owner | Krishna Tejas Voruganti | Allocation test cases and RTM mapping reviewed and approved in GitHub issue HMS-025 |
 
-**Document Status:** Draft - pending Dev Lead review and final team approval.
+**Document status:** Draft — pending Dev Lead review and final team approval.
