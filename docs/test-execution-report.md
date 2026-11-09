@@ -52,46 +52,47 @@ The following manual UI scenarios were also executed against the running applica
 
 | Test Scenario | Actual Result | Status |
 |---|---|---|
-| Create a student with valid details | Student record was created and appeared in the student list. | PASS |
-| Create a student using a duplicate student ID | Application rejected the duplicate ID and displayed an already-exists message. | PASS |
-| Submit the student form without the required student ID | Application displayed "Student ID is required"; the record was not saved. | PASS |
-| Search for an existing student by ID | Matching student record was displayed. | PASS |
-| Search for an existing student by name | Matching student record was displayed. | PASS |
-| Search for a student who does not exist | Application displayed a no-match result. | PASS |
-| Update an existing student | Application displayed a successful update message and showed the updated student details. | PASS |
+| TC-STU-001 — Create a student with valid details | Student record was created and appeared in the student list. | PASS |
+| TC-STU-002 — Create a student using a duplicate student ID | Application rejected the duplicate ID and displayed an already-exists message. | PASS |
+| TC-STU-003 — Submit the student form without the required student ID | Application displayed "Student ID is required"; the record was not saved. | PASS |
+| TC-STU-004 — Search for an existing student by ID | Matching student record was displayed. | PASS |
+| TC-STU-005 — Update an existing student | Application displayed a successful update message and showed the updated student details. | PASS |
+| TC-STU-006 — Search for a student who does not exist | Application displayed a no-match result. | PASS |
+| TC-STU-007 — View existing student details | Existing student details were displayed successfully. | PASS |
 
 ### 3.2 Room Management
 
 | Test Scenario | Actual Result | Status |
 |---|---|---|
-| Add a room with valid details | Room C301 was created with capacity 4. | PASS |
-| Add a room with a duplicate room number | Application rejected the duplicate room number. | PASS |
+| TC-ROOM-001 — Add a room with valid details | Room C301 was created with capacity 4. | PASS |
+| TC-ROOM-002 — Add a room with a duplicate room number | Application rejected the duplicate room number. | PASS |
 | TC-ROOM-003 — Submit room with capacity 0 and -1 | Both zero and negative capacity values were rejected with the positive whole-number validation message. | PASS |
-| Verify occupancy of an empty room | C301 showed 0 occupied and 4 free beds before allocation. | PASS |
-| TC-ROOM-007 — Verify room occupancy after allocation | RC301 occupancy increased from 0/4 to 1/4 after allocation. Available capacity decreased from 4 to 3. | PASS |
+| TC-ROOM-004 — Verify occupancy of an empty room | C301 showed 0 occupied and 4 free beds before allocation. | PASS |
 | TC-ROOM-005 — Submit the room form without a room number | The application displayed the "Room number is required" validation message and prevented room creation. After submission, I checked the room list and verified that no new room record had been created. | PASS |
-| Filter rooms by "With free space" | Rooms with available capacity were displayed. | PASS |
+| TC-ROOM-007 — Verify room occupancy after allocation | RC301 occupancy increased from 0/4 to 1/4 after allocation. Available capacity decreased from 4 to 3. | PASS |
+| TC-FILT-001 — Filter rooms by "With free space" | Rooms with available capacity were displayed. | PASS |
 
 ### 3.3 Allocation Management
 
 | Test Scenario | Actual Result | Status |
 |---|---|---|
-| Allocate a student to a room with available capacity | Active allocation AL001 was created for the student in room RC301. | PASS |
-| Allocate the same student again while an active allocation exists | Application rejected the duplicate active allocation. | PASS |
-| Allocate a student to a room that is already full | Application rejected the allocation and displayed a room-full message. | PASS |
-| Filter allocations by Vacated status | Only vacated allocations were displayed. | PASS |
-| Filter allocations by room and Vacated status with no matching allocation | Application displayed a no-matching-allocations message. | PASS |
-| Vacate an active allocation | Allocation status changed as expected and dashboard occupancy values updated. | PASS |
+| TC-ALLOC-001 — Allocate a student to a room with available capacity | Active allocation AL001 was created for the student in room RC301. | PASS |
+| TC-ALLOC-002 — Allocate a student to a room that is already full | Application rejected the allocation and displayed a room-full message. | PASS |
+| TC-ALLOC-003 — Allocate the same student again while an active allocation exists | Application rejected the duplicate active allocation. | PASS |
 | TC-ALLOC-004 — Change-room workflow | The change-room control was available for active allocation AL001. The recorded workflow was followed by an updated dashboard summary. | PASS |
+| TC-ALLOC-005 — Vacate an active allocation | Allocation status changed as expected and dashboard occupancy values updated. | PASS |
 | TC-ALLOC-006 — Verify allocation at room capacity boundary | The first allocation to RC303 succeeded and filled the room to 1/1. A subsequent allocation was rejected with the message "Room RC303 is full". | PASS |
+| TC-FILT-002 — Filter allocations by Vacated status | Only vacated allocations were displayed. | PASS |
+| TC-FILT-003 — Filter allocations by room and Vacated status with no matching allocation | Application displayed a no-matching-allocations message. | PASS |
 
 ### 3.4 Dashboard Verification
 
 | Test Scenario | Actual Result | Status |
 |---|---|---|
-| Verify student count after creating student records | Dashboard displayed 3 total students and 3 active students. | PASS |
-| Verify room and occupancy summaries after room and allocation changes | Dashboard displayed 3 rooms, 2 rooms with space, 1 full room, total capacity 9, 2 occupied beds and 7 free beds. | PASS |
-| Verify dashboard after changing allocation status | Dashboard values changed following the vacate operation. | PASS |
+| TC-DASH-001 — Verify student count after creating student records | Dashboard displayed 3 total students and 3 active students. | PASS |
+| TC-DASH-002 — Verify room count | Dashboard displayed 3 rooms. | PASS |
+| TC-DASH-003 — Verify room capacity and occupancy | Dashboard displayed total capacity 9, occupied spaces 2 and available spaces 7. | PASS |
+| TC-DASH-004 — Verify dashboard after changing allocation status | After vacating an allocation, occupied spaces decreased from 1 to 0, free spaces increased from 12 to 13, and total capacity remained 13. | PASS |
 
 ## 4. Supplementary Automated Performance Check — HMS-020
 
@@ -208,10 +209,15 @@ Relevant evidence files include:
 - `docs/evidence/11-student-search-by-name.png`
 - `docs/evidence/13-student-update-success.png`
 - `docs/evidence/18-room-zero-capacity-validation.png`
+- `docs/evidence/19-room-list-empty-occupancy.png`
 - `docs/evidence/20-room-required-number-validation.png`
 - `docs/evidence/22-active-allocation-change-room-control.png`
+- `docs/evidence/23-room-occupancy-after-allocation.png`
 - `docs/evidence/25-dashboard-after-allocation-change.png`
 - `docs/evidence/27-allocation-success-and-full-room-rejection.png`
+- `docs/evidence/28-vacated-allocation-records.png`
+- `docs/evidence/29-vacated-filter-room-C301.png`
+- `docs/evidence/30-vacated-filter-no-match-C303.png`
 - `docs/evidence/32-invalid-student-allocation-rejected.png`
 - `docs/evidence/33-room-negative-capacity-validation.png`
 - `docs/evidence/34-room-filter-with-free-space-results.png`
