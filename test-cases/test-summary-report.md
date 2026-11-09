@@ -10,11 +10,11 @@
 
 **Role:** Quality Assurance Lead
 
-**Report Date:** 1 November 2026
+**Report Date:** 10 November 2026
 
 **Sprint:** Sprint 2
 
-**Application Revision Tested:** 2c239a3 (main)
+**Build / Revision Details:** 26 October execution: Team development build; 28 October QA follow-up: 2c239a3 (main); 2 November API negative test and 31 October usability test: revision not recorded
 
 **Report Status:** Draft — Pending Final Team Review
 
@@ -26,11 +26,11 @@ This Test Summary Report presents the testing activities, execution results, def
 
 The testing activities included automated backend API testing, manual UI testing, usability evaluation, security checks, performance verification, and selected browser compatibility checks.
 
-The automated backend test suite completed successfully with 38 tests passed and zero failures. Six formal manual UI test cases were recorded as passed, along with two additional successful UI observations.
+The verified automated backend API suite completed with 40 tests passed and zero failures; the initial 38-test run was followed by two dashboard tests. The initial manual UI execution recorded 26 of 26 test cases as passed on 26 October 2026. A QA Lead follow-up on 28 October rechecked six selected cases, with two additional UI observations; these are follow-up checks, not six additional unique manual cases. A separate authenticated API negative test (TC-ALLOC-007) passed on 2 November 2026.
 
 The usability evaluation conducted under HMS-028 involved five representative participants. All five participants successfully completed the student search and room availability tasks without assistance, achieving a 100% completion rate and satisfying the acceptance criterion.
 
-No reproducible defects were observed during the recorded testing activities. Additionally, no currently open GitHub issues carrying the repository's `bug` label were found during the defect review conducted on 1 November 2026.
+No reproducible defects were observed during the recorded testing activities. Additionally, no currently open GitHub issues carrying the repository's `bug` label were found during the defect review conducted on 10 November 2026.
 
 However, some quality tests and requirements remain partially tested or pending. Therefore, the report represents partial Sprint 2 QA coverage rather than final approval of the entire application.
 
@@ -58,19 +58,19 @@ The objectives of Sprint 2 testing were:
 
 | Parameter | Details |
 |---|---|
-| Operating System | Windows |
+| Operating System | Windows desktop for manual UI/usability checks; automated execution OS not recorded |
 | Browser | Google Chrome |
-| Runtime Environment | Node.js v24.19.0 |
-| Package Manager | npm 11.17.0 |
+| Runtime Environment | Node.js test environment (exact version not recorded) |
+| Package Manager | npm (version not recorded) |
 | Backend | Node.js / Express |
 | Frontend | React / Vite |
-| Backend Database | In-memory demo database |
+| Backend Database | MongoDB Memory Server for automated tests; in-memory demo data for UI testing |
 | Frontend URL | http://localhost:5173 |
 | API URL | http://localhost:5001 |
-| Application Revision | 2c239a3 (main) |
-| Initial Test Dataset | 10 students, 5 rooms, 8 allocations |
+| Application Revision | 2c239a3 (main) for 28 October QA follow-up; other execution revisions not recorded |
+| QA Follow-up Dataset (28 October) | 10 students, 5 rooms, 8 allocations |
 
-The application was executed using fictional demo data and an in-memory database. Data modifications made during testing were not persistent across application restarts.
+Manual UI testing used fictional demo data in an in-memory database; data modifications were not persistent across application restarts. The automated API suite used MongoDB Memory Server.
 
 The browser version and desktop resolution were not formally recorded for the compatibility evaluation.
 
@@ -130,24 +130,25 @@ Selected core pages and workflows were exercised in Google Chrome on Windows. Th
 
 | Test Suite | Actual Result | Status |
 |---|---|---|
-| Backend API test suite | 38 tests passed, 0 failed | PASS |
-| API list/search performance check | Ten repeated list/search operations met the automated three-second assertion | PASS |
+| Backend API test suite | 40 tests passed, 0 failed | PASS |
+| API list/search performance check | 50 requests across five endpoints satisfied the under-three-second assertion | PASS |
+| Additional API negative test (TC-ALLOC-007) | One separately executed authenticated negative test passed on 2 November 2026 | PASS |
 
 **Execution Details:**
 
-- Test execution date: 28 October 2026.
+- Test execution date: 26 October 2026.
 
-- Application revision: 2c239a3.
+- Application revision for the 26 October automated execution: not recorded. The 2c239a3 (main) revision is recorded for the 28 October QA follow-up.
 
 - Total test suites passed: 1.
 
-- Total automated tests passed: 38.
+- Total automated tests passed: 40.
 
 - Failed tests: 0.
 
-- Execution time: 16.042 seconds.
+- Execution time: Approximately 14.785 seconds.
 
-The automated test suite covered student management, input validation, room management, allocation rules, capacity restrictions, duplicate allocation prevention, filtering, dashboard summaries, fees, authentication, password hashing, error handling, and API performance.
+The verified 40-test automated suite covered student management, input validation, room management, allocation rules, capacity restrictions, duplicate allocation prevention, filtering, dashboard summaries, fee records and validation, authentication-related operations, error handling, and supplementary API performance checks.
 
 **Result:** The automated backend test suite completed successfully.
 
@@ -155,7 +156,7 @@ Note: The successful API performance assertion does not replace the separate bro
 
 ## 6. Manual UI Test Execution Results
 
-The following formal manual UI test cases were executed and recorded in the Sprint 2 execution log.
+The following six selected manual UI test cases were rechecked during the QA Lead follow-up on 28 October. They are a subset of the 26 manual UI test cases recorded in the initial 26 October execution and are not additional unique test cases.
 
 | Test Case ID | Scenario | Actual Result | Status |
 |---|---|---|---|
@@ -246,8 +247,8 @@ The following coverage summary is based on the Sprint 2 RTM from HMS-027, update
 
 | Coverage Status | Number of Requirements |
 |---|---:|
-| Passed | 8 |
-| Partially Tested | 7 |
+| Passed | 15 |
+| Partially Tested | 0 |
 | Planned | 0 |
 | Conditional | 2 |
 | **Total** | **17** |
@@ -278,8 +279,8 @@ HMS-NFR-001 is included under Passed based on the HMS-028 usability results.
 
 | Coverage Status | Number of Requirements |
 |---|---:|
-| Passed | 15 |
-| Partially Tested | 10 |
+| Passed | 22 |
+| Partially Tested | 3 |
 | Planned | 2 |
 | Conditional | 2 |
 | **Total** | **29** |
@@ -288,7 +289,7 @@ The coverage figures represent requirement-level status classifications, not a c
 
 ## 10. Defect Summary
 
-A review of the repository's open issues was performed on 1 November 2026.
+A fresh review of the repository's open issues was performed on 10 November 2026.
 
 The repository's `bug` label was used to identify explicitly tracked open defects.
 
@@ -300,7 +301,7 @@ The repository's `bug` label was used to identify explicitly tracked open defect
 
 No reproducible defects were observed during the testing activities recorded in the execution log.
 
-No currently open GitHub issues carrying the `bug` label were found during the review.
+A GitHub CLI query on 10 November 2026 returned no currently open issues carrying the `bug` label.
 
 This does not establish that no defects exist outside the recorded testing scope or that untested functionality is defect-free.
 
@@ -317,7 +318,7 @@ The following activities remain incomplete and require further execution or revi
 | TC-NFR-001 | Perform ten formal browser-based list/search timing measurements. | Not Run |
 | TC-COMP-001 | Complete browser-version and desktop-resolution compatibility checks. | Partial |
 | TC-REV-001 | Review modular code organization and separation of application responsibilities. | Planned |
-| Remaining functional test cases | Complete the pending student, room, allocation, filtering, dashboard, and other applicable test scenarios. | Pending |
+
 
 Optional requirements remain conditional where the corresponding features have not been approved or implemented.
 
@@ -339,7 +340,7 @@ Optional requirements remain conditional where the corresponding features have n
 
 ## 13. Recommendations
 
-1. Complete all pending functional and non-functional test cases.
+1. Prioritize completion of the outstanding quality checks listed in Section 11.
 
 2. Conduct the formal browser-based performance evaluation.
 
@@ -359,11 +360,11 @@ Optional requirements remain conditional where the corresponding features have n
 
 The Hostel Management System has successfully completed the selected automated backend tests, manual UI tests, and usability evaluation recorded in this report.
 
-The automated backend suite achieved 38 successful tests with zero failures. Six formal manual UI test cases passed, two additional UI checks were successful, and all five participants passed the usability evaluation.
+The verified automated backend suite achieved 40 successful tests with zero failures. The initial manual UI execution recorded 26/26 passing cases; six selected cases were rechecked on 28 October, with two additional UI observations. A separate authenticated TC-ALLOC-007 negative API test passed on 2 November. All five participants completed the two usability tasks without assistance on 31 October.
 
-The RTM indicates that 15 of the 29 tracked requirements are passed, 10 are partially tested, two remain planned, and two are conditional.
+The latest RTM on main records 22 of the 29 tracked requirements as Passed, three as Partially tested, two as Planned, and two as Conditional.
 
-No open GitHub issues labelled as bugs were identified during the defect review conducted on 1 November 2026.
+No open GitHub issues labelled as bugs were identified during the defect review conducted on 10 November 2026.
 
 However, outstanding security, performance, compatibility, and maintainability checks remain.
 
