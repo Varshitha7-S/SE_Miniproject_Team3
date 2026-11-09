@@ -25,7 +25,7 @@
 | TC-ROOM-002 | Team development build | Duplicate room number was rejected and the existing room remained unchanged. | Pass | Shailaja P.C. | 26 Oct 2026 | [View Screenshot](../docs/evidence/17-room-duplicate-number-rejected.png) |
 | TC-ROOM-003 | Team development build | Capacity values 0 and -1 were rejected with validation. Neither invalid room capacity was accepted. | Pass | Shailaja P.C. | 26 Oct 2026 | [Zero Capacity](../docs/evidence/18-room-zero-capacity-validation.png), [Negative Capacity](../docs/evidence/33-room-negative-capacity-validation.png) |
 | TC-ROOM-004 | Team development build | Empty room occupancy was displayed as 0/4. | Pass | Shailaja P.C. | 26 Oct 2026 | [View Screenshot](../docs/evidence/19-room-list-empty-occupancy.png) |
-| TC-ROOM-005 | Team development build | Required room-number validation was displayed when the field was left empty. Submission was prevented and no room record was saved. | Pass | Shailaja P.C. | 26 Oct 2026 | [View Screenshot](../docs/evidence/20-room-required-number-validation.png) |
+| TC-ROOM-005 | Team development build | The application displayed the "Room number is required" validation message and prevented room creation. After submission, I checked the room list and verified that no new room record had been created. | Pass | Shailaja P.C. | 26 Oct 2026 | [View Screenshot](../docs/evidence/20-room-required-number-validation.png) |
 | TC-ROOM-007 | Team development build | RC301 occupancy increased from 0/4 to 1/4 after allocation. Available capacity decreased from 4 to 3. | Pass | Shailaja P.C. | 26 Oct 2026 | [Before Allocation](../docs/evidence/19-room-list-empty-occupancy.png), [After Allocation](../docs/evidence/23-room-occupancy-after-allocation.png) |
 | TC-FILT-001 | Team development build | Selecting the free-space filter automatically displayed rooms with available capacity. | Pass | Shailaja P.C. | 26 Oct 2026 | [View Screenshot](../docs/evidence/34-room-filter-with-free-space-results.png) |
 | TC-ALLOC-001 | Team development build | Allocation AL001 was successfully created for HMS-STU-001 in RC301. Occupancy increased from 0/4 to 1/4 and available capacity decreased from 4 to 3. | Pass | Shailaja P.C. | 26 Oct 2026 | [Allocation AL001](../docs/evidence/22-active-allocation-change-room-control.png), [Updated Occupancy](../docs/evidence/23-room-occupancy-after-allocation.png) |
@@ -95,17 +95,16 @@ The automated backend API test execution completed with 40 passing tests and no 
 - Two dashboard tests were added.
 - Subsequent verified execution: 40 tests passed.
 
-## 4. Performance Test Execution — TC-NFR-001
+## 4. Supplementary Automated Performance Check — HMS-020
 
 **Requirement:** HMS-NFR-002  
 **Automated Test Group:** `Performance (HMS-020)`  
 **Test File:** `backend/tests/api.test.js`  
-**Execution Date:** 26 Oct 2026  
-**Status:** Pass
+**Execution Date:** 26 Oct 2026
 
 ### Test Implementation
 
-The automated performance test:
+The supplementary automated performance check:
 
 1. Inserts 500 student records and 100 room records into the test database.
 2. Sends 10 requests to each of the following endpoints:
@@ -123,11 +122,21 @@ The automated performance test:
 
 All performance assertions passed during the verified 40-test execution. Each measured request satisfied the under-3000-millisecond assertion.
 
+**Status:** PASS — supplementary automated HMS-020 check.
+
 ### Evidence and Measurement Limitation
 
 The supporting evidence is the automated performance test implementation in `backend/tests/api.test.js` and the successful 40-test Jest execution.
 
 The test code does not save or print individual response-time values. The 14.785-second value is the total Jest suite runtime, not an individual API response time.
+
+### Formal Test Case TC-NFR-001 — Pending
+
+The formal TC-NFR-001 procedure in `quality-test-cases.md` requires ten measured list/search operations, individual timing records, and test-environment details.
+
+The supplementary automated HMS-020 check does not replace this formal procedure.
+
+**Status:** PENDING — formal TC-NFR-001 measurement and evidence have not yet been completed.
 
 ## 5. Dashboard Verification
 
@@ -173,8 +182,6 @@ Evidence:
 - [Dashboard Before Vacating](../docs/evidence/35-dashboard-before-vacating.png)
 - [Dashboard After Vacating](../docs/evidence/36-dashboard-after-vacating.png)
 
-**Traceability Note:** This automated API performance check is recorded as an executed supplementary performance test. It does not replace the formal ten-operation measurement procedure specified in `quality-test-cases.md` for TC-NFR-001. The formal test-case result remains pending until the required individual timings and environment details are recorded.
-
 ## 6. Defect Summary
 
 No failed test cases were recorded in the execution results.
@@ -192,12 +199,14 @@ The additional API negative test is a separately recorded execution of TC-ALLOC-
 ## 8. Execution Notes
 
 - TC-ROOM-003 records rejection of both zero and negative room capacities.
-- TC-ROOM-005 records required-field validation, prevented submission, and confirmation that no room record was saved.
+- TC-ROOM-005 records required-field validation, prevented room creation, and confirmation from a subsequent room-list check that no new room record was created.
 - TC-ROOM-007 records RC301 occupancy increasing from 0/4 to 1/4 and available capacity decreasing from 4 to 3.
 - TC-ALLOC-001 records successful creation of AL001 for HMS-STU-001 in RC301 and the corresponding occupancy increase.
+- TC-ALLOC-004 records the change-room workflow and the updated dashboard information.
 - TC-ALLOC-006 records successful first allocation to RC303, the room reaching 1/1 capacity, and rejection of the subsequent allocation.
 - TC-FILT-001 uses automatic filter application; no Apply button is required.
 - TC-DASH-004 records dashboard values before and after vacating an allocation.
 - TC-ALLOC-007 was verified through an authenticated backend API request on 02 November 2026.
-- TC-NFR-001 is linked to the automated performance test group `Performance (HMS-020)`.
+- The supplementary automated HMS-020 performance check passed its under-three-second assertions.
+- Formal TC-NFR-001 remains pending until its ten-operation measurement procedure and individual timing evidence are recorded.
 - Screenshot evidence is stored in `docs/evidence/`.
