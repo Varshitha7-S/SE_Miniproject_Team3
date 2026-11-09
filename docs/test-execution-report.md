@@ -44,7 +44,7 @@ The automated test suite reported passing tests for:
 - Fee records and validation (HMS-022).
 - Error handling (HMS-017).
 - Authentication-related operations (HMS-019).
-- Performance checks (HMS-020), linked to HMS-NFR-002 and TC-NFR-001.
+- Supplementary performance checks (HMS-020).
 
 The following manual UI scenarios were also executed against the running application.
 
@@ -66,11 +66,11 @@ The following manual UI scenarios were also executed against the running applica
 |---|---|---|
 | Add a room with valid details | Room C301 was created with capacity 4. | PASS |
 | Add a room with a duplicate room number | Application rejected the duplicate room number. | PASS |
-| Submit a room with capacity 0 | Application displayed a positive whole-number validation message; no room was added. | PASS |
+| TC-ROOM-003 — Submit room with capacity 0 and -1 | Both zero and negative capacity values were rejected with the positive whole-number validation message. | PASS |
 | Verify occupancy of an empty room | C301 showed 0 occupied and 4 free beds before allocation. | PASS |
-| Submit the room form without a room number | Required-field validation was displayed, submission was prevented, and no room record was saved. | PASS |
+| TC-ROOM-007 — Verify room occupancy after allocation | RC301 occupancy increased from 0/4 to 1/4 after allocation. Available capacity decreased from 4 to 3. | PASS |
+| TC-ROOM-005 — Submit the room form without a room number | The application displayed the "Room number is required" validation message and prevented room creation. After submission, I checked the room list and verified that no new room record had been created. | PASS |
 | Filter rooms by "With free space" | Rooms with available capacity were displayed. | PASS |
-| Filter rooms by "Full only" when no room was full | No matching rooms were displayed. | PASS |
 
 ### 3.3 Allocation Management
 
@@ -82,6 +82,8 @@ The following manual UI scenarios were also executed against the running applica
 | Filter allocations by Vacated status | Only vacated allocations were displayed. | PASS |
 | Filter allocations by room and Vacated status with no matching allocation | Application displayed a no-matching-allocations message. | PASS |
 | Vacate an active allocation | Allocation status changed as expected and dashboard occupancy values updated. | PASS |
+| TC-ALLOC-004 — Change-room workflow | The change-room control was available for active allocation AL001. The recorded workflow was followed by an updated dashboard summary. | PASS |
+| TC-ALLOC-006 — Verify allocation at room capacity boundary | The first allocation to RC303 succeeded and filled the room to 1/1. A subsequent allocation was rejected with the message "Room RC303 is full". | PASS |
 
 ### 3.4 Dashboard Verification
 
@@ -91,19 +93,16 @@ The following manual UI scenarios were also executed against the running applica
 | Verify room and occupancy summaries after room and allocation changes | Dashboard displayed 3 rooms, 2 rooms with space, 1 full room, total capacity 9, 2 occupied beds and 7 free beds. | PASS |
 | Verify dashboard after changing allocation status | Dashboard values changed following the vacate operation. | PASS |
 
-## 4. Performance Test — TC-NFR-001
+## 4. Supplementary Automated Performance Check — HMS-020
 
-**Requirement:** HMS-NFR-002 — Common list/search operations should complete within three seconds in the agreed test environment.
-
-**Automated Test Group:** `Performance (HMS-020)`
-
-**Test File:** `backend/tests/api.test.js`
-
+**Requirement:** HMS-NFR-002  
+**Automated Test Group:** `Performance (HMS-020)`  
+**Test File:** `backend/tests/api.test.js`  
 **Execution Date:** 26 October 2026
 
 ### Test Implementation
 
-The automated performance test:
+The supplementary automated performance check:
 
 1. Inserts 500 student records and 100 room records into the test database.
 2. Sends 10 requests to each of the following five endpoints:
@@ -115,17 +114,25 @@ The automated performance test:
 3. Measures each request duration using `Date.now()`.
 4. Asserts that every request completes in less than 3000 milliseconds.
 
-**Total Requests:** 50 (10 requests to each of five endpoints).
+**Total Requests:** 50.
 
-**Actual Result:** All performance assertions passed in the verified 40-test automated execution. Every measured request satisfied the under-3000-millisecond assertion.
+**Actual Result:** All performance assertions passed during the verified 40-test automated execution. Every measured request satisfied the under-3000-millisecond assertion.
 
-**Status:** PASS
+**Status:** PASS — supplementary automated HMS-020 check.
 
 **Evidence:**
 - Automated performance test implementation in `backend/tests/api.test.js`, under `Performance (HMS-020)`.
 - Successful Jest execution showing 1 suite passed, 40 tests passed and 0 tests failed.
 
-**Measurement Limitation:** The test code checks each request against the three-second threshold but does not save or print individual response-time values. The 14.785-second value is the total Jest suite runtime, not an individual endpoint response time.
+**Measurement Limitation:** Individual response-time values are not saved or printed by the test code. The approximately 14.785-second value represents the total Jest suite runtime, not an individual API response time.
+
+### Formal Test Case TC-NFR-001 — Pending
+
+The formal TC-NFR-001 procedure in `quality-test-cases.md` requires ten measured list/search operations, individual timing records, and test-environment details.
+
+The supplementary automated HMS-020 check does not replace this formal procedure.
+
+**Status:** PENDING — formal TC-NFR-001 measurement and evidence have not yet been completed.
 
 ## 5. Additional API Negative Test — TC-ALLOC-007
 
@@ -163,12 +170,12 @@ This was an API-level negative test, not a frontend dropdown test.
 - Duplicate student IDs and duplicate room numbers were rejected.
 - Student ID and room-capacity validation messages were observed.
 - Zero and negative room capacities were rejected.
-- The room-number required-field validation prevented submission, and no room record was saved.
+- TC-ROOM-005: Required-field validation prevented room creation. A subsequent check of the room list confirmed that no new room record was created.
 - Allocation validation prevented duplicate active allocations and allocations to full rooms.
 - Room availability and allocation-status filters returned results consistent with the selected filters.
 - Dashboard values were consistent with the observed room capacity and occupancy.
 - The authenticated API request using a nonexistent student ID was rejected with HTTP 404.
-- The performance test enforced the three-second threshold for each tested request, but individual timings were not persisted.
+- The supplementary performance check enforced the three-second threshold for each tested request, but individual timings were not persisted.
 - Passing these tests does not establish that the entire application is defect-free.
 - Test scenarios not listed as executed remain pending until they are run and recorded.
 
@@ -182,6 +189,9 @@ The evidence includes:
 - Screenshots of student creation, duplicate student ID rejection, search results and student update.
 - Screenshots of room creation, duplicate room number rejection, capacity validation and room availability filtering.
 - Screenshot 20 — room-number required-field validation.
+- Screenshot 22 — active allocation change-room control.
+- Screenshot 25 — dashboard after allocation change.
+- Screenshot 27 — allocation success and full-room rejection.
 - Screenshot 32 — invalid student allocation rejected by the authenticated API.
 - Screenshot 33 — negative room capacity validation.
 - Screenshot 34 — room filter displaying rooms with free space.
@@ -199,6 +209,9 @@ Relevant evidence files include:
 - `docs/evidence/13-student-update-success.png`
 - `docs/evidence/18-room-zero-capacity-validation.png`
 - `docs/evidence/20-room-required-number-validation.png`
+- `docs/evidence/22-active-allocation-change-room-control.png`
+- `docs/evidence/25-dashboard-after-allocation-change.png`
+- `docs/evidence/27-allocation-success-and-full-room-rejection.png`
 - `docs/evidence/32-invalid-student-allocation-rejected.png`
 - `docs/evidence/33-room-negative-capacity-validation.png`
 - `docs/evidence/34-room-filter-with-free-space-results.png`
@@ -211,8 +224,9 @@ Relevant evidence files include:
 - Automated backend test run: Completed — PASS (40/40 tests).
 - Manual UI test execution: Completed — PASS (26/26 test cases).
 - Additional authenticated API negative test: Completed — PASS (02 November 2026).
-- TC-ROOM-005: Completed — PASS; empty room-number submission was prevented and no room record was saved.
-- TC-NFR-001: Automated performance test executed and passed its under-three-second assertions.
+- TC-ROOM-005: Completed — PASS; required-field validation prevented room creation, and a subsequent room-list check confirmed that no new room record was created.
+- Supplementary automated HMS-020 performance check: Completed — PASS.
+- Formal TC-NFR-001: Pending — required ten-operation measurements and individual timing evidence have not yet been completed.
 - HMS-NFR-001 usability testing: Planned; results from PR #44 are to be incorporated after branch integration.
 - Other planned test cases not executed in the recorded sessions: Pending.
 - Regression testing after any defect fixes: Pending, if applicable.
