@@ -1,11 +1,11 @@
-
+﻿
 # Requirements Traceability Matrix (RTM)
 
 **Project:** Hostel Management System
 **Version:** 1.1
 **Prepared by:** Varshitha S (QA Lead)
 **Sprint:** Sprint 1; updated during Sprint 2 on 28 October 2026
-**Status:** Draft — Sprint 2 execution results recorded; pending final team review
+**Status:** Draft â€” Sprint 2 execution results recorded; pending final team review
 
 ## 1. Purpose
 
@@ -30,7 +30,7 @@ This document maps the Hostel Management System requirements to the correspondin
 | HMS-FR-013 | Filter rooms by availability and allocations by status | Search / Filter UI / API | TC-FILT-001, TC-FILT-002, TC-FILT-003 | Partially tested |
 | HMS-FR-014 | Protect administrative actions with authorization, if implemented | Authentication / Authorization | TC-SEC-001, if implemented | Passed |
 | HMS-FR-015 | Display dashboard summaries | Dashboard | TC-DASH-001, TC-DASH-002, TC-DASH-003, TC-DASH-004 | Partially tested |
-| HMS-FR-016 | Validate required fields and display understandable messages | Input Validation | TC-STU-003, TC-ROOM-003, TC-ROOM-005, TC-SEC-002 | Partially tested |
+| HMS-FR-016 | Validate required fields and display understandable messages | Input Validation | TC-STU-003, TC-ROOM-003, TC-ROOM-005, TC-SEC-002 | Passed |
 | HMS-FR-017 | View allocation history, if approved | Allocation History | TC-HIST-001, if approved and implemented | Conditional |
 
 ## 3. Non-Functional Requirements Traceability
@@ -65,7 +65,7 @@ This document maps the Hostel Management System requirements to the correspondin
 | TC-ALLOC-004 | Change student room | HMS-FR-010, HMS-FR-006 | Previous allocation is closed, the new allocation is recorded, and room occupancy is updated correctly. |
 | TC-ALLOC-005 | Vacate an allocated room | HMS-FR-011, HMS-FR-006 | Active allocation ends and available capacity increases. |
 | TC-ALLOC-006 | Test room capacity boundary | HMS-FR-008, HMS-NFR-003, HMS-FR-006 | The final available space can be allocated; a further allocation is rejected, and capacity is never exceeded. |
-| TC-ALLOC-007 | Reject invalid student or room references | HMS-FR-007, HMS-SR-002 | Invalid allocation is rejected without incorrect data changes. |
+| TC-ALLOC-007 | Reject allocation with a nonexistent student ID | HMS-FR-007, HMS-SR-002 | The request is rejected and no allocation is created for the nonexistent student. |
 
 ## 6. Coverage Status Definitions
 
@@ -87,7 +87,7 @@ This document maps the Hostel Management System requirements to the correspondin
 6. Update the RTM whenever requirements or test cases change.
 7. Ensure every referenced test case is defined in the relevant test documentation.
 
-## 8. Sprint 2 Execution Update — 28 October 2026
+## 8. Sprint 2 Execution Update â€” 28 October 2026
 
 - Detailed actual results and limitations are recorded in `test-cases/test-execution-log.md`.
 - Automated backend suite: 38 of 38 tests passed.
@@ -106,4 +106,6 @@ This document maps the Hostel Management System requirements to the correspondin
 | Dev Lead | Aditya Singhal | Pending review |
 | Product Owner | Krishna Tejas Voruganti | Allocation test cases and RTM mapping reviewed and approved in GitHub issue HMS-025 |
 
-**Document status:** Draft — pending Dev Lead review and final team approval.
+**Document status:** Draft â€” pending Dev Lead review and final team approval.
+
+

@@ -310,6 +310,60 @@ describe('Dashboard (HMS-014)', () => {
       totalCapacity: 5, totalOccupied: 2, freeCapacity: 3, activeAllocations: 2,
     });
   });
+
+  test('returns zeroed summary when there are no students, rooms or allocations', async () => {
+    const d = (
+      await request(app).get('/api/dashboard').expect(200)
+    ).body;
+
+    expect(d).toEqual({
+      totalStudents: 0,
+      activeStudents: 0,
+      totalRooms: 0,
+      fullRooms: 0,
+      availableRooms: 0,
+      totalCapacity: 0,
+      totalOccupied: 0,
+      freeCapacity: 0,
+      activeAllocations: 0,
+    });
+  });
+
+  test('dashboard updates after an allocation is vacated', async () => {
+    await mkStudents(1);
+    const r = await mkRoom(101, 1);
+
+    const allocation = (
+      await request(app)
+        .post('/api/allocations')
+        .send({ studentId: 'S1', roomId: r.roomId })
+        .expect(201)
+    ).body;
+
+    const before = (
+      await request(app).get('/api/dashboard').expect(200)
+    ).body;
+
+    expect(before.totalOccupied).toBe(1);
+    expect(before.freeCapacity).toBe(0);
+    expect(before.activeAllocations).toBe(1);
+    expect(before.fullRooms).toBe(1);
+
+    await request(app)
+      .patch(`/api/allocations/${allocation.allocationId}/vacate`)
+      .send({})
+      .expect(200);
+
+    const after = (
+      await request(app).get('/api/dashboard').expect(200)
+    ).body;
+
+    expect(after.totalOccupied).toBe(0);
+    expect(after.freeCapacity).toBe(1);
+    expect(after.activeAllocations).toBe(0);
+    expect(after.fullRooms).toBe(0);
+    expect(after.availableRooms).toBe(1);
+  });
 });
 
 describe('Fees (HMS-022)', () => {
