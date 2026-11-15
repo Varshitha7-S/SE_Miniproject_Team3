@@ -69,6 +69,11 @@ cd backend && npm test      # 38 API tests against an in-memory MongoDB
 
 The suite covers validation, duplicate and full-room rules, concurrent-request safety, error format, authentication and the 3-second list/search budget.
 
+### CI/CD
+
+- **CI** (`.github/workflows/ci.yml`): on every push and pull request to `main`, runs the backend tests (`npm test`) and the frontend build.
+- **CD** (`.github/workflows/cd.yml`): after CI passes on `main`, builds and uploads a release package as a workflow artifact. If the `BACKEND_DEPLOY_HOOK` / `FRONTEND_DEPLOY_HOOK` repository secrets are set, it also triggers deployment on the hosting provider.
+
 ### API overview
 
 See [docs/API.md](docs/API.md) for every endpoint, request field and status code.
