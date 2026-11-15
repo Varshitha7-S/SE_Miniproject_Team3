@@ -1,0 +1,43 @@
+name: CD
+
+# Runs only after CI succeeds on main. Packages a release and, if deploy hooks are
+# configured as repository secrets, triggers deployment on the hosting provider.
+on:
+  workflow_run:
+    workflows: [CI]
+    branches: [main]
+    types: [completed]
+
+jobs:
+  release:
+    name: Package and deploy
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Build frontend
+        working-directory: frontend
+        run: npm ci && npm run build
+      - name: Package release
+        run: |
+          mkdir release
+          cp -r frontend/dist release/frontend
+          cp -r backend/src backend/package.json backend/package-lock.json release/
+          tar -czf hms-release.tar.gz -C release .
+      - uses: actions/upload-artifact@v4
+        with:
+          name: hms-release-${{ github.event.workflow_run.head_sha }}
+          path: hms-release.tar.gz
+      - name: Trigger deployment (optional)
+        env:
+          BACKEND_DEPLOY_HOOK: ${{ secrets.BACKEND_DEPLOY_HOOK }}
+          FRONTEND_DEPLOY_HOOK: ${{ secrets.FRONTEND_DEPLOY_HOOK }}
+        run: |
+          for hook in "$BACKEND_DEPLOY_HOOK" "$FRONTEND_DEPLOY_HOOK"; do
+            if [ -n "$hook" ]; then curl -fsS -X POST "$hook"; else echo "deploy hook not set, skipping"; fi
+          done
